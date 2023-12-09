@@ -1,0 +1,26 @@
+<br>
+<div class="col d-flex justify-content-center mb-2">
+    <div class="card login-box">
+        <div [appHover]="'orange'" class="card-header">
+            Login
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <label>Email</label>
+                    <input type="text" [(ngModel)]="model.email" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-sm-12">
+                    <label>Password</label>
+                    <input type="text" [(ngModel)]="model.password" class="form-control">
+                    <span><i class="bi bi-eye-slash-fill"></i></span>
+                </div>
+            </div>
+            <div class="btn-group me-2 float-end" role="group" aria-label="First group">
+                <button type="button" class="btn btn-outline-secondary" (click)="onSubmit()">Login</button>
+            </div>
+        </div>
+    </div>
+</div>
