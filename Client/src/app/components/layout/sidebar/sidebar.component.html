@@ -1,5 +1,4 @@
 <aside class="sidebar shadow-sm">
-
     <div class="sidebar-profile d-flex flex-column justify-content-center pt-5 pb-3">
         <div class="picture-wrapper mb-4">
             <div class="user-picture m-auto">
@@ -27,9 +26,9 @@
           </a>
         </li> -->
             <li>
-                <a href="#" routerLink="/board" routerLinkActive="active">
+                <a href="#" routerLink="/dashboard" routerLinkActive="active">
                     <i class="fa fa-tv"></i>
-                    <span>Board</span>
+                    <span>Dashboard</span>
                 </a>
             </li>
             <!-- <li>
@@ -40,15 +39,15 @@
         </li>   -->
 
             <li *ngIf="userType?.role=='SuperAdmin'">
-                <a href="#" routerLink="/project" routerLinkActive="active">
+                <a href="#" routerLink="/employee" routerLinkActive="active">
                     <i class="fas fa-project-diagram"></i>
-                    <span>Project</span>
+                    <span>Employee</span>
                 </a>
             </li>
             <li *ngIf="userType?.role=='SuperAdmin'">
-                <a href="#" routerLink="/employee" routerLinkActive="active">
+                <a href="#" routerLink="/customer" routerLinkActive="active">
                     <i class="fas fa-users"></i>
-                    <span>Employee</span>
+                    <span>Customer</span>
                 </a>
             </li>
             <li *ngIf="userType?.role=='SuperAdmin'">
@@ -65,9 +64,9 @@
             </li>
             <li>
             <li>
-                <a href="#" routerLink="/whatsappconfiguration" routerLinkActive="active">
+                <a href="#" routerLink="/employee" routerLinkActive="active">
                     <i class="fa-brands fa-whatsapp"></i>
-                    <span>Whatsapp configuration</span>
+                    <span>Employee</span>
                 </a>
             </li>
             <li>
