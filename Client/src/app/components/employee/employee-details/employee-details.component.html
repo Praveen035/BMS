@@ -1,1 +1,33 @@
-<p>employee-details works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <label>First Name</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-sm-4">
+            <label>Last Name</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-sm-4">
+            <button type="button" [routerLink]="['create']" class="btn btn-secondary">Create</button>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-striped mt-5">
+            <caption>List of employees</caption>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Blood Group</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>

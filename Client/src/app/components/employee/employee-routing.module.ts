@@ -6,7 +6,12 @@ import { CreateEmployeeComponent } from './create-employee/create-employee.compo
 const routes: Routes = [{
   path: '',
   component: EmployeeDetailsComponent
-}, {
+},
+{
+  path: 'employee-details',
+  component: EmployeeDetailsComponent
+},
+{
   path: 'create',
   component: CreateEmployeeComponent
 }];

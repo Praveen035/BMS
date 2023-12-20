@@ -28,6 +28,26 @@ export const LayoutRoutes: Routes = [
       {
         path: 'department',
         loadChildren: () => import('../department/department.module').then(m => m.DepartmentModule),
+      },
+      {
+        path: 'recipe',
+        loadChildren: () => import('../recipe/recipe.module').then(m => m.RecipeModule),
+      },
+      {
+        path: 'recipe-category',
+        loadChildren: () => import('../recipe-category/recipe-category.module').then(m => m.RecipeCategoryModule),
+      },
+      {
+        path: 'table',
+        loadChildren: () => import('../table/table.module').then(m => m.TableModule),
+      },
+      {
+        path: 'menu',
+        loadChildren: () => import('../menu/menu.module').then(m => m.MenuModule),
+      },
+      {
+        path: 'order',
+        loadChildren: () => import('../order/order.module').then(m => m.OrderModule),
       }
     ]
   }
