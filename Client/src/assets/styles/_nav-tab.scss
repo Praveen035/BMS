@@ -1,0 +1,26 @@
+.nav-tabs {
+    --bs-nav-tabs-border-width: none !important;
+    --bs-nav-tabs-border-color: none !important;
+    --bs-nav-tabs-border-radius: none !important;
+    --bs-nav-tabs-link-hover-border-color: none !important;
+    --bs-nav-tabs-link-active-color: none !important;
+    --bs-nav-tabs-link-active-bg: none !important;
+    --bs-nav-tabs-link-active-border-color: none !important;
+    border-bottom: 1px solid rgb(237, 238, 238) !important;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    background-color: none !important;
+    border-color: none !important;
+    font-weight: 600;
+    border-bottom: 3px solid #408dfb !important;
+}
+
+.nav-tabs .nav-link {
+    margin-bottom: none !important;
+    border: none !important;
+    border-top-left-radius: none !important;
+    border-top-right-radius: none !important;
+    color: black;
+}

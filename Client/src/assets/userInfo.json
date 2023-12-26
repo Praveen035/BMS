@@ -1,0 +1,80 @@
+[
+    {
+        "id": 1,
+        "name": "Karthikeyan",
+        "email": "karthikeyan@antbuild.in",
+        "role": "SuperAdmin"
+    },
+    {
+        "id": 2,
+        "name": "Sakthivel",
+        "email": "sakthivel@antbuild.in",
+        "role": "SuperAdmin"
+    },
+    {
+        "id": 3,
+        "name": "Ravi",
+        "email": "ravi@antbuild.in",
+        "role": "SuperAdmin"
+    },
+    {
+        "id": 4,
+        "name": "Siva",
+        "email": "siva@antbuild.in",
+        "role": "SuperAdmin"
+    },
+    {
+        "id": 5,
+        "name": "Thillaikarassi Senthil",
+        "email": "thillai@antbuild.in",
+        "role": "Developer"
+    },
+    {
+        "id": 6,
+        "name": "Dineshkumar S",
+        "email": "dinesh@antbuild.in",
+        "role": "Developer"
+    },
+    {
+        "id": 7,
+        "name": "Ponraj Murugesan",
+        "email": "ponraj@antbuild.in",
+        "role": "Developer"
+    },
+    {
+        "id": 8,
+        "name": "Udhay",
+        "email": "udhay@antbuild.in",
+        "role": "Developer"
+    },
+    {
+        "id": 10,
+        "name": "Saraswathi Loganathan",
+        "email": "saraswathi@antbuild.in",
+        "role": "Tester"
+    },
+    {
+        "id": 11,
+        "name": "Vidya Ashok",
+        "email": "tracker@antbuild.in",
+        "role": "Tester"
+    },
+    {
+        "id": 11,
+        "name": "Rajkumar Murugesan",
+        "email": "rajkumar@antbuild.in",
+        "role": "Developer"
+    },
+    {
+        "id": 12,
+        "name": "Anitha Periyasamy",
+        "email": "rajkumar@antbuild.in",
+        "role": "Developer"
+    },
+    {
+        "id": 13,
+        "name": "Praveen Konaraddi",
+        "email": "praveen@antbuild.in",
+        "role": "SuperAdmin"
+    }
+]

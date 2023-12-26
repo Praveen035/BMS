@@ -1,25 +1,28 @@
-<br>
-<div class="col d-flex justify-content-center mb-2">
-    <div class="card login-box">
-        <div [appHover]="'orange'" class="card-header">
-            Login
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-sm-12">
-                    <label>Email</label>
-                    <input type="text" [(ngModel)]="model.email" class="form-control">
+<div class="container ">
+    <div class="row justify-content-center h-100">
+        <div class="card my-auto shadow">
+            <div class="card-body px-5">
+                <div class="text-center">
+                    <!-- <fa-icon [icon]="faLock" class="fa-3x"></fa-icon> -->
                 </div>
-            </div>
-            <div class="row mb-4">
-                <div class="col-sm-12">
-                    <label>Password</label>
-                    <input type="text" [(ngModel)]="model.password" class="form-control">
-                    <span><i class="bi bi-eye-slash-fill"></i></span>
+                <div class="text-center">
+                    <h2>Welcome</h2>
                 </div>
+                <p style="color: lightslategray; text-align: center;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please enter your login
+                    details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <div class="form-group">
+                    <input type="email" id="email" [(ngModel)]="model.email" placeholder="Email" class="form-control"
+                        name="email" />
+                </div>
+                <div class="form-group">
+                    <input type="password" [(ngModel)]="model.password" id="password" placeholder="Password"
+                        class="form-control" name="password" />
+                </div>
+                <input type="submit" (click)="onSubmit()" class="btn btn-primary w-100" value="Login" name="">
             </div>
-            <div class="btn-group me-2 float-end" role="group" aria-label="First group">
-                <button type="button" class="btn btn-outline-secondary" (click)="onSubmit()">Login</button>
+            <div class="card-footer text-right">
+                <small><a routerLink="../forgot-password">Forgot Password</a></small>
             </div>
         </div>
     </div>

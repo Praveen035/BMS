@@ -1,0 +1,96 @@
+@import "./styles/variables";
+@import "./styles/navbar";
+@import "./styles/navbar.scss";
+@import "./styles/sidebar";
+@import "./styles/themes";
+@import "./styles/dashboard";
+@import "./styles/button";
+@import "./styles/card";
+@import "./styles/form";
+@import "./styles/table";
+@import '~node_modules/ngx-toastr/toastr.css';
+
+.icon-style {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  border: 1px solid;
+  font-size: .9rem;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding-top: 60px;
+}
+
+.wrapper {
+  height: 100%;
+
+  main {
+    display: flex;
+    height: 100%;
+
+    .pages {
+      overflow: auto;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      opacity: .7;
+      display: none;
+
+      &.show {
+
+        display: block;
+
+        @media (min-width: 768px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.toggeled-sidebar {
+    main {
+      .overlay {
+        display: block;
+
+        @media (min-width: 768px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.toast {
+  opacity: 1;
+}
+
+.tox-notifications-container {
+  display: none !important
+}
+
+.comment-body img {
+  max-width: 100% !important;
+}
+
+.custom-modalbox {
+  min-width: 95vw !important;
+  width: 95vw !important;
+  height: 90vh;
+  margin-top: 60px;
+}
+
+.custom-modalbox  .mat-dialog-content
+{
+  max-height: 75vh;
+}
