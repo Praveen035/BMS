@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+Server/BMS/bin/Debug/net8.0/Api.dll
