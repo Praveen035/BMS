@@ -2640,11 +2640,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Praveen\\BMS\\Server\\Data\\Data.csproj",
+      "projectUniqueName": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "C:\\Praveen\\BMS\\Server\\Data\\Data.csproj",
+      "projectPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Data\\Data.csproj",
       "packagesPath": "C:\\Users\\Praveen\\.nuget\\packages\\",
-      "outputPath": "C:\\Praveen\\BMS\\Server\\Data\\obj\\",
+      "outputPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Praveen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2661,8 +2661,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Praveen\\BMS\\Server\\Models\\Models.csproj": {
-              "projectPath": "C:\\Praveen\\BMS\\Server\\Models\\Models.csproj"
+            "C:\\Praveen\\BMS-1812\\BMS\\Server\\Models\\Models.csproj": {
+              "projectPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Models\\Models.csproj"
             }
           }
         }

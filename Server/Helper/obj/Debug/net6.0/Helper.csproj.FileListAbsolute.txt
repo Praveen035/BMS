@@ -21,3 +21,15 @@ C:\Praveen\BMS\Server\Helper\obj\Debug\net6.0\refint\Helper.dll
 C:\Praveen\BMS\Server\Helper\obj\Debug\net6.0\Helper.pdb
 C:\Praveen\BMS\Server\Helper\obj\Debug\net6.0\ref\Helper.dll
 C:\Praveen\BMS\Server\Helper\obj\Debug\net6.0\Helper.sourcelink.json
+C:\Praveen\BMS-1812\BMS\Server\Helper\bin\Debug\net6.0\Helper.deps.json
+C:\Praveen\BMS-1812\BMS\Server\Helper\bin\Debug\net6.0\Helper.dll
+C:\Praveen\BMS-1812\BMS\Server\Helper\bin\Debug\net6.0\Helper.pdb
+C:\Praveen\BMS-1812\BMS\Server\Helper\obj\Debug\net6.0\Helper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Praveen\BMS-1812\BMS\Server\Helper\obj\Debug\net6.0\Helper.AssemblyInfoInputs.cache
+C:\Praveen\BMS-1812\BMS\Server\Helper\obj\Debug\net6.0\Helper.AssemblyInfo.cs
+C:\Praveen\BMS-1812\BMS\Server\Helper\obj\Debug\net6.0\Helper.csproj.CoreCompileInputs.cache
+C:\Praveen\BMS-1812\BMS\Server\Helper\obj\Debug\net6.0\Helper.sourcelink.json
+C:\Praveen\BMS-1812\BMS\Server\Helper\obj\Debug\net6.0\Helper.dll
+C:\Praveen\BMS-1812\BMS\Server\Helper\obj\Debug\net6.0\refint\Helper.dll
+C:\Praveen\BMS-1812\BMS\Server\Helper\obj\Debug\net6.0\Helper.pdb
+C:\Praveen\BMS-1812\BMS\Server\Helper\obj\Debug\net6.0\ref\Helper.dll

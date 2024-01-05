@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dbD74wOQy8eSpi+96sE1qkFdhsoR3gpLblcnKaiz1x0yVlJhU1jiPbXYn1pQaQK0hkpj3Pl0Vu1s0D379yZqhQ==",
+  "dgSpecHash": "qel2ez19a1fCXJ6mvIhkoytBwZ0You7ya6QS55fVpZ7lNXslwwyKEkbisvgsrXdssH6H2XQSBM6icf/V9+VU5g==",
   "success": true,
-  "projectFilePath": "C:\\Praveen\\BMS\\Server\\IService\\IService.csproj",
+  "projectFilePath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\IService\\IService.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
