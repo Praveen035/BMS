@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Customer } from '../models/customer';
+import { CustomerService } from '../services/customer.service';
 
 @Component({
   selector: 'app-create-customer',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-customer.component.scss']
 })
 export class CreateCustomerComponent {
+  model: Customer = new Customer();
 
+  constructor(private _customerService: CustomerService) { }
+
+  SaveCustomerDetails() {
+    debugger;
+    this._customerService.CreateCustomer(this.model).subscribe({
+
+    })
+  }
 }

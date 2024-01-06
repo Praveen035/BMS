@@ -1,5 +1,43 @@
-<div class="card">
-    <div class="card-body">
-        This is some text within a card body.
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h6>Customer create</h6>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row mb-2">
+                        <div class="col-sm-3">
+                            <label>Customer Name</label>
+                            <input type="text" [(ngModel)]="model.name" class="form-control">
+                        </div>
+                        <div class="col-sm-3">
+                            <label>City</label>
+                            <input type="text" [(ngModel)]="model.city" class="form-control">
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Country</label>
+                            <input type="text" [(ngModel)]="model.country" class="form-control">
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Phone Number</label>
+                            <input type="number" [(ngModel)]="model.phoneNumber" class="form-control">
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Postal Code</label>
+                            <input type="text" [(ngModel)]="model.postalCode" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <div class="text-end">
+                <button type="button" [routerLink]="['/employee-details']"
+                    class="btn btn-sm btn-outline-dark me-2">Cancel</button>
+                <button type="button" (click)="SaveCustomerDetails()"
+                    class="btn btn-sm btn-outline-success">Create</button>
+            </div>
+        </div>
     </div>
 </div>

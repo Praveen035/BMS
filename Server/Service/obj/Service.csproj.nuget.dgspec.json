@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Praveen\\BMS\\Server\\Service\\Service.csproj": {}
+    "C:\\Praveen\\BMS-1812\\BMS\\Server\\Service\\Service.csproj": {}
   },
   "projects": {
-    "C:\\Praveen\\BMS\\Server\\Data\\Data.csproj": {
+    "C:\\Praveen\\BMS-1812\\BMS\\Server\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Praveen\\BMS\\Server\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Praveen\\BMS\\Server\\Data\\Data.csproj",
+        "projectPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\Praveen\\.nuget\\packages\\",
-        "outputPath": "C:\\Praveen\\BMS\\Server\\Data\\obj\\",
+        "outputPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Praveen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Praveen\\BMS\\Server\\Models\\Models.csproj": {
-                "projectPath": "C:\\Praveen\\BMS\\Server\\Models\\Models.csproj"
+              "C:\\Praveen\\BMS-1812\\BMS\\Server\\Models\\Models.csproj": {
+                "projectPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Models\\Models.csproj"
               }
             }
           }
@@ -77,14 +77,14 @@
         }
       }
     },
-    "C:\\Praveen\\BMS\\Server\\IService\\IService.csproj": {
+    "C:\\Praveen\\BMS-1812\\BMS\\Server\\IService\\IService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Praveen\\BMS\\Server\\IService\\IService.csproj",
+        "projectUniqueName": "C:\\Praveen\\BMS-1812\\BMS\\Server\\IService\\IService.csproj",
         "projectName": "IService",
-        "projectPath": "C:\\Praveen\\BMS\\Server\\IService\\IService.csproj",
+        "projectPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\IService\\IService.csproj",
         "packagesPath": "C:\\Users\\Praveen\\.nuget\\packages\\",
-        "outputPath": "C:\\Praveen\\BMS\\Server\\IService\\obj\\",
+        "outputPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\IService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Praveen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -101,8 +101,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Praveen\\BMS\\Server\\Models\\Models.csproj": {
-                "projectPath": "C:\\Praveen\\BMS\\Server\\Models\\Models.csproj"
+              "C:\\Praveen\\BMS-1812\\BMS\\Server\\Models\\Models.csproj": {
+                "projectPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Models\\Models.csproj"
               }
             }
           }
@@ -136,14 +136,14 @@
         }
       }
     },
-    "C:\\Praveen\\BMS\\Server\\Models\\Models.csproj": {
+    "C:\\Praveen\\BMS-1812\\BMS\\Server\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Praveen\\BMS\\Server\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Praveen\\BMS\\Server\\Models\\Models.csproj",
+        "projectPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Models\\Models.csproj",
         "packagesPath": "C:\\Users\\Praveen\\.nuget\\packages\\",
-        "outputPath": "C:\\Praveen\\BMS\\Server\\Models\\obj\\",
+        "outputPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Praveen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -191,14 +191,14 @@
         }
       }
     },
-    "C:\\Praveen\\BMS\\Server\\Service\\Service.csproj": {
+    "C:\\Praveen\\BMS-1812\\BMS\\Server\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Praveen\\BMS\\Server\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\Praveen\\BMS\\Server\\Service\\Service.csproj",
+        "projectPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Service\\Service.csproj",
         "packagesPath": "C:\\Users\\Praveen\\.nuget\\packages\\",
-        "outputPath": "C:\\Praveen\\BMS\\Server\\Service\\obj\\",
+        "outputPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Praveen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -215,11 +215,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Praveen\\BMS\\Server\\Data\\Data.csproj": {
-                "projectPath": "C:\\Praveen\\BMS\\Server\\Data\\Data.csproj"
+              "C:\\Praveen\\BMS-1812\\BMS\\Server\\Data\\Data.csproj": {
+                "projectPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Data\\Data.csproj"
               },
-              "C:\\Praveen\\BMS\\Server\\IService\\IService.csproj": {
-                "projectPath": "C:\\Praveen\\BMS\\Server\\IService\\IService.csproj"
+              "C:\\Praveen\\BMS-1812\\BMS\\Server\\IService\\IService.csproj": {
+                "projectPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\IService\\IService.csproj"
               }
             }
           }

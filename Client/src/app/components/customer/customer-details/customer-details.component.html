@@ -1,1 +1,54 @@
-<p>customer-details works!</p>
+<div class="card">
+    <div class="card-header">
+        <h6>Customer details</h6>
+    </div>
+    <div class="card-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>First Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-sm-4">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" [routerLink]="['createcustomer']" class="btn btn-secondary">Create</button>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table table-striped mt-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Country</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Postal Code</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let model of models; let rowIndex=index ">
+                            <td>{{model.name}}</td>
+                            <td>{{model.city}}</td>
+                            <td>{{model.country}}</td>
+                            <td>{{model.phoneNumber}}</td>
+                            <td>{{model.postalCode| date: 'dd/MM/yyyy'}}</td>
+                            <td>
+                                <a class="icon-action p-2" [routerLink]="['/customer/edit/', model.id]"
+                                    ngbTooltip="Edit">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                <a class="icon-action p-2" (click)="deleteCustomer(model.id)" ngbTooltip="Delete">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

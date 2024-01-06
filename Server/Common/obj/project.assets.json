@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Praveen\\BMS\\Server\\Common\\Common.csproj",
+      "projectUniqueName": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Common\\Common.csproj",
       "projectName": "Common",
-      "projectPath": "C:\\Praveen\\BMS\\Server\\Common\\Common.csproj",
+      "projectPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Common\\Common.csproj",
       "packagesPath": "C:\\Users\\Praveen\\.nuget\\packages\\",
-      "outputPath": "C:\\Praveen\\BMS\\Server\\Common\\obj\\",
+      "outputPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Common\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Praveen\\AppData\\Roaming\\NuGet\\NuGet.Config",

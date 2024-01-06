@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Praveen\\BMS\\Server\\Helper\\Helper.csproj": {}
+    "C:\\Praveen\\BMS-1812\\BMS\\Server\\Helper\\Helper.csproj": {}
   },
   "projects": {
-    "C:\\Praveen\\BMS\\Server\\Helper\\Helper.csproj": {
+    "C:\\Praveen\\BMS-1812\\BMS\\Server\\Helper\\Helper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Praveen\\BMS\\Server\\Helper\\Helper.csproj",
+        "projectUniqueName": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Helper\\Helper.csproj",
         "projectName": "Helper",
-        "projectPath": "C:\\Praveen\\BMS\\Server\\Helper\\Helper.csproj",
+        "projectPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Helper\\Helper.csproj",
         "packagesPath": "C:\\Users\\Praveen\\.nuget\\packages\\",
-        "outputPath": "C:\\Praveen\\BMS\\Server\\Helper\\obj\\",
+        "outputPath": "C:\\Praveen\\BMS-1812\\BMS\\Server\\Helper\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Praveen\\AppData\\Roaming\\NuGet\\NuGet.Config",

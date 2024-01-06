@@ -1,9 +1,9 @@
 import { BaseModel } from "src/app/common/models/base-model";
 
-export class Employee extends BaseModel {
-    employeeId: string;
+export class Employee {
+    employeeID: string;
     employeeName: string;
     department: string;
     emailId: string;
-    employeeDoj: Date;
+    doj: Date
 }
