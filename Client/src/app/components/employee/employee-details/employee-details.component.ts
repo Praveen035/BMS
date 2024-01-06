@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from '../services/employee.service';
+import { first } from 'rxjs';
+import { Employee } from '../models/employee';
 
 @Component({
   selector: 'app-employee-details',
@@ -6,8 +9,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee-details.component.scss']
 })
 export class EmployeeDetailsComponent implements OnInit {
+  models: Employee[] = [];
+  constructor(private _employeeService: EmployeeService) { }
   ngOnInit(): void {
+    this.load();
   }
 
+  load() {
+    this._employeeService.getAllEmployee().pipe(first()).subscribe({
+      next: (x: any) => {
+        this.models = x;
+        debugger;
+        // this.total$ = x.totalCount;
+        // this.models.sort = this.sort;
+        // this.models.paginator = this.paginator;
+      },
+      error: (err: Error) => { }
+    });
+  }
+
+  editEmployee(empId: any) { }
+
+  deleteEmployee(id: any): void {
+    debugger;
+    if (window.confirm("Do you want to delete this activity?") === true) {
+      this._employeeService
+        .deleteEmployee(id)
+        .subscribe({
+          next: (x: any) => {
+            this.load();
+          },
+          error: () => {
+          }
+        });
+    }
+  }
 
 }

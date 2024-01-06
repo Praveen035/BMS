@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Customer } from '../models/customer';
 
 @Component({
   selector: 'app-customer-details',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class CustomerDetailsComponent {
 
+  models: Customer[] = [];
+
+  deleteCustomer(id: any) { }
 }

@@ -11,7 +11,7 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   get<T>(url: string): Observable<T> {
-    return this.http.get<T>(`${environment.baseUrl + url}`);
+    return this.http.get<T>(`${'https://localhost:7216/' + url}`);
   }
 
   getWithParams<T>(url: string, params: HttpParams): Observable<T> {
@@ -23,15 +23,15 @@ export class HttpService {
   }
 
   post<T>(data: any, url: string): Observable<T> {
-    return this.http.post<T>(`${environment.baseUrl + url}`, data);
+    return this.http.post<T>(`${'https://localhost:7216/' + url}`, data);
   }
 
   put<T>(id: any, data: any, url: string): Observable<T> {
-    return this.http.put<T>(`${environment.baseUrl + url + '/' + id}`, data);
+    return this.http.put<T>(`${'https://localhost:7216/' + url + '/' + id}`, data);
   }
 
   delete<T>(id: any, url: string): Observable<T> {
-    const endpointUrl = `${environment.baseUrl + url}/${id}`;
+    const endpointUrl = `${'https://localhost:7216/' + url}/${id}`;
     return this.http.delete<T>(endpointUrl);
   }
 
