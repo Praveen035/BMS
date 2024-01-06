@@ -10,6 +10,7 @@ export class CustomerService {
   constructor(private httpClient: HttpService) { }
 
   CreateCustomer(model: Customer) {
+    debugger;
     return this.httpClient.post<Customer>(model, 'api/customer/addcustomer');
   }
 

@@ -1,9 +1,9 @@
 export class Customer {
     id: any;
-    Name: string;
-    Address: string;
-    City: string;
-    PostalCode: string;
-    Country: string;
-    PhoneNumber: number;
+    name: string;
+    address: string;
+    city: string;
+    postalCode: string;
+    country: string;
+    phoneNumber: number;
 }

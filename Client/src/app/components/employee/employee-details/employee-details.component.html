@@ -1,48 +1,56 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4">
-            <label>First Name</label>
-            <input type="text" class="form-control">
-        </div>
-        <div class="col-sm-4">
-            <label>Last Name</label>
-            <input type="text" class="form-control">
-        </div>
-        <div class="col-sm-4">
-            <button type="button" [routerLink]="['createemployee']" class="btn btn-secondary">Create</button>
-        </div>
+<div class="card">
+    <div class="card-header">
+        <h6>Employee details</h6>
     </div>
-    <div class="row">
-        <table class="table table-striped mt-5">
-            <caption>List of employees</caption>
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Department</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">DOJ</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let model of models; let rowIndex=index ">
-                    <td>{{model.employeeID}}</td>
-                    <td>{{model.employeeName}}</td>
-                    <td>{{model.department}}</td>
-                    <td>{{model.emailId}}</td>
-                    <td>{{model.doj | date: 'dd/MM/yyyy'}}</td>
-                    <td>
-                        <a class="icon-action p-2" [routerLink]="['/employee/edit/', model.employeeID]"
-                            ngbTooltip="Edit">
-                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                        </a>
-                        <a class="icon-action p-2" (click)="deleteEmployee(model.employeeID)" ngbTooltip="Delete">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="card-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>First Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-sm-4">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" [routerLink]="['createemployee']" class="btn btn-secondary">Create</button>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table table-striped mt-5">
+                    <caption>List of employees</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">DOJ</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let model of models; let rowIndex=index ">
+                            <td>{{model.employeeID}}</td>
+                            <td>{{model.employeeName}}</td>
+                            <td>{{model.department}}</td>
+                            <td>{{model.emailId}}</td>
+                            <td>{{model.doj | date: 'dd/MM/yyyy'}}</td>
+                            <td>
+                                <a class="icon-action p-2" [routerLink]="['/employee/edit/', model.employeeID]"
+                                    ngbTooltip="Edit">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                <a class="icon-action p-2" (click)="deleteEmployee(model.employeeID)"
+                                    ngbTooltip="Delete">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

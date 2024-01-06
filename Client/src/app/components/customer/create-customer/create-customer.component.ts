@@ -13,6 +13,9 @@ export class CreateCustomerComponent {
   constructor(private _customerService: CustomerService) { }
 
   SaveCustomerDetails() {
-    this._customerService.CreateCustomer(this.model).subscribe({})
+    debugger;
+    this._customerService.CreateCustomer(this.model).subscribe({
+
+    })
   }
 }
