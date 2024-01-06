@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using IService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Models.Customer;
+using Models.Employee;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -9,36 +12,61 @@ namespace Api.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        // GET: api/<CustomerController>
-        [HttpGet, Authorize]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+		private readonly ICustomerService _customer;
+		private readonly IDepartmentService _department;
+		public CustomerController(ICustomerService customer, IDepartmentService department)
+		{
+			_customer = customer ??
+				throw new ArgumentNullException(nameof(customer));
+			_department = department ??
+				throw new ArgumentNullException(nameof(department));
+		}
 
-        // GET api/<CustomerController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+		[HttpGet]
+		[Route("getcustomer")]
+		public async Task<IActionResult> Get()
+		{
+			return Ok(await _customer.GetCustomers());
+		}
 
-        // POST api/<CustomerController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+		[HttpGet("{id}")]
+		public async Task<IActionResult> GetEmpByID(int Id)
+		{
+			return Ok(await _customer.GetCustomerByID(Id));
+		}
 
-        // PUT api/<CustomerController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+		[HttpPost]
+		[Route("addcustomer")]
+		public async Task<IActionResult> Post(CustomerModel emp)
+		{
+			var result = await _customer.InsertCustomer(emp);
+			if (result.Id == Convert.ToString(0))
+			{
+				return StatusCode(StatusCodes.Status500InternalServerError, "Something Went Wrong");
+			}
+			return Ok(result);
+		}
 
-        // DELETE api/<CustomerController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
-    }
+		[HttpPut("{id}")]
+		public async Task<IActionResult> Put(int id, [FromBody] CustomerModel cust)
+		{
+			await _customer.UpdateCustomer(cust);
+			return Ok("Updated Successfully");
+		}
+
+
+		[HttpDelete("{id}")]
+		public JsonResult Delete(int id)
+		{
+			var result = _customer.DeleteCustomer(id);
+			return new JsonResult("Deleted Successfully");
+		}
+
+		[HttpGet]
+		[Route("getdepartment")]
+		public async Task<IActionResult> GetAllDepartmentNames()
+		{
+			return Ok(await _department.GetDepartment());
+		}
+	}
 }
