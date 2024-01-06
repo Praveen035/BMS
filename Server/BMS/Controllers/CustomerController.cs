@@ -39,8 +39,9 @@ namespace Api.Controllers
 		[Route("addcustomer")]
 		public async Task<IActionResult> Post(CustomerModel emp)
 		{
+			emp.Id = Guid.NewGuid();
 			var result = await _customer.InsertCustomer(emp);
-			if (result.Id == Convert.ToString(0))
+			if (result.Id == null)
 			{
 				return StatusCode(StatusCodes.Status500InternalServerError, "Something Went Wrong");
 			}
@@ -56,7 +57,7 @@ namespace Api.Controllers
 
 
 		[HttpDelete("{id}")]
-		public JsonResult Delete(int id)
+		public JsonResult Delete(Guid id)
 		{
 			var result = _customer.DeleteCustomer(id);
 			return new JsonResult("Deleted Successfully");

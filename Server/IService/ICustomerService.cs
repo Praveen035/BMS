@@ -14,6 +14,6 @@ namespace IService
 		Task<CustomerModel> GetCustomerByID(int ID);
 		Task<CustomerModel> InsertCustomer(CustomerModel objCustomer);
 		Task<CustomerModel> UpdateCustomer(CustomerModel objCustomer);
-		bool DeleteCustomer(int ID);
+		bool DeleteCustomer(Guid ID);
 	}
 }
