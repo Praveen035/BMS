@@ -22,7 +22,7 @@ namespace Service
         {
             return await _appDBContext.Departments.ToListAsync();
         }
-        public async Task<DepartmentModel> GetDepartmentByID(int ID)
+        public async Task<DepartmentModel> GetDepartmentByID(Guid ID)
         {
             return await _appDBContext.Departments.FindAsync(ID);
         }
@@ -38,7 +38,7 @@ namespace Service
             await _appDBContext.SaveChangesAsync();
             return objDepartment;
         }
-        public bool DeleteDepartment(int ID)
+        public bool DeleteDepartment(Guid ID)
         {
             bool result = false;
             var department = _appDBContext.Departments.Find(ID);

@@ -10,9 +10,9 @@ namespace IService
     public interface IDepartmentService
     {
         Task<IEnumerable<DepartmentModel>> GetDepartment();
-        Task<DepartmentModel> GetDepartmentByID(int ID);
+        Task<DepartmentModel> GetDepartmentByID(Guid ID);
         Task<DepartmentModel> InsertDepartment(DepartmentModel objDepartment);
         Task<DepartmentModel> UpdateDepartment(DepartmentModel objDepartment);
-        bool DeleteDepartment(int ID);
+        bool DeleteDepartment(Guid ID);
     }
 }

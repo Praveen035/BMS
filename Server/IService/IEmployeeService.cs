@@ -10,9 +10,9 @@ namespace IService
     public interface IEmployeeService
     {
         Task<IEnumerable<EmployeeModel>> GetEmployees();
-        Task<EmployeeModel> GetEmployeeByID(int ID);
+        Task<EmployeeModel> GetEmployeeByID(Guid ID);
         Task<EmployeeModel> InsertEmployee(EmployeeModel objEmployee);
         Task<EmployeeModel> UpdateEmployee(EmployeeModel objEmployee);
-        bool DeleteEmployee(int ID);
+        bool DeleteEmployee(Guid ID);
     }
 }

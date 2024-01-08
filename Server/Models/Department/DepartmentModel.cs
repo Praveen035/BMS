@@ -13,7 +13,7 @@ namespace Models.Department
     public class DepartmentModel
     {
         [Key]
-        public int DepartmentId { get; set; }
+        public Guid? DepartmentId { get; set; }
 
         public string? DepartmentName { get; set; }
 

@@ -11,7 +11,7 @@ namespace IService
 	public interface ICustomerService
 	{
 		Task<IEnumerable<CustomerModel>> GetCustomers();
-		Task<CustomerModel> GetCustomerByID(int ID);
+		Task<CustomerModel> GetCustomerByID(Guid ID);
 		Task<CustomerModel> InsertCustomer(CustomerModel objCustomer);
 		Task<CustomerModel> UpdateCustomer(CustomerModel objCustomer);
 		bool DeleteCustomer(Guid ID);

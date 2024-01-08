@@ -23,7 +23,7 @@ namespace Service
 		{
 			return await _appDBContext.Customers.ToListAsync();
 		}
-		public async Task<CustomerModel> GetCustomerByID(int ID)
+		public async Task<CustomerModel> GetCustomerByID(Guid ID)
 		{
 			return await _appDBContext.Customers.FindAsync(ID);
 		}
@@ -39,7 +39,7 @@ namespace Service
 			await _appDBContext.SaveChangesAsync();
 			return objCustomer;
 		}
-		public bool DeleteCustomer(int ID)
+		public bool DeleteCustomer(Guid ID)
 		{
 			bool result = false;
 			var customer = _appDBContext.Customers.Find(ID);

@@ -14,10 +14,10 @@ namespace Api.Controllers
         private readonly IDepartmentService _department;
         public EmployeeController(IEmployeeService employee, IDepartmentService department)
         {
-            _employee = employee ??
-                throw new ArgumentNullException(nameof(employee));
-            _department = department ??
-                throw new ArgumentNullException(nameof(department));
+            _employee = employee ?? 
+                throw new ArgumentNullException(nameof(employee)); 
+            _department = department ?? 
+                throw new ArgumentNullException(nameof(department)); 
         }
 
         [HttpGet]
@@ -28,7 +28,7 @@ namespace Api.Controllers
         }
 
 		[HttpGet("{id}")]
-		public async Task<IActionResult> GetEmpByID(int Id)
+		public async Task<IActionResult> GetEmpByID(Guid Id)
         {
             return Ok(await _employee.GetEmployeeByID(Id));
         }
@@ -38,7 +38,7 @@ namespace Api.Controllers
         public async Task<IActionResult> Post(EmployeeModel emp)
         {
             var result = await _employee.InsertEmployee(emp);
-            if (result.EmployeeID == 0)
+            if (result.EmployeeID == null)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Something Went Wrong");
             }
@@ -46,15 +46,14 @@ namespace Api.Controllers
         }
 
 		[HttpPut("{id}")]
-		public async Task<IActionResult> Put(int id, [FromBody] EmployeeModel emp)
+		public async Task<IActionResult> Put(Guid id, [FromBody] EmployeeModel emp)
         {
             await _employee.UpdateEmployee(emp);
-            return Ok("Updated Successfully");
+            return Ok();
         }
-
-      
+              
         [HttpDelete("{id}")]
-        public JsonResult Delete(int id)
+        public JsonResult Delete(Guid id)
         {
             var result = _employee.DeleteEmployee(id);
             return new JsonResult("Deleted Successfully");

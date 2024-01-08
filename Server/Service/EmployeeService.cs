@@ -22,7 +22,7 @@ namespace Service
         {
             return await _appDBContext.Employees.ToListAsync();
         }
-        public async Task<EmployeeModel> GetEmployeeByID(int ID)
+        public async Task<EmployeeModel> GetEmployeeByID(Guid ID)
         {
             return await _appDBContext.Employees.FindAsync(ID);
         }
@@ -38,7 +38,7 @@ namespace Service
             await _appDBContext.SaveChangesAsync();
             return objEmployee;
         }
-        public bool DeleteEmployee(int ID)
+        public bool DeleteEmployee(Guid ID)
         {
             bool result = false;
             var department = _appDBContext.Employees.Find(ID);
