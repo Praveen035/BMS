@@ -1,1 +1,39 @@
-<p>create-recipe works!</p>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h6>Recipe create</h6>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row mb-2">
+                        <div class="col-sm-3">
+                            <input type="text" [(ngModel)]="model.recipeName" placeholder="Recipe Name"
+                                class="form-control">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" [(ngModel)]="model.recipeCategory" placeholder="Recipe Category"
+                                class="form-control">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" [(ngModel)]="model.recipePrepareDate" placeholder="Recipe Prepare Date"
+                                class="form-control">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" [(ngModel)]="model.recipeExpireDate" placeholder="Recipe Expire Date"
+                                class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <div class="text-end">
+                <button type="button" [routerLink]="['/recipe']"
+                    class="btn btn-sm btn-outline-dark me-2">Cancel</button>
+                <button type="button" (click)="SaveRecipeDetails()"
+                    class="btn btn-sm btn-outline-success">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

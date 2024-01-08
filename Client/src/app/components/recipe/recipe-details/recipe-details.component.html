@@ -1,1 +1,52 @@
-<p>recipe-details works!</p>
+<div class="card">
+    <div class="card-header">
+        <h6>Recipe details</h6>
+    </div>
+    <div class="card-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Recipe Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-sm-4">
+                    <label>Recipe Category Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-sm-4 mt-4">
+                    <button type="button" [routerLink]="['create-recipe']" class="btn btn-secondary">Create</button>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table table-striped mt-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">Recipe Name</th>
+                            <th scope="col">Recipe Category</th>
+                            <th scope="col">Recipe Prepare Date</th>
+                            <th scope="col">Recipe Expire Date</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let model of models; let rowIndex=index ">
+                            <td>{{model.recipeName}}</td>
+                            <td>{{model.recipeCategory}}</td>
+                            <td>{{model.recipePrepareDate}}</td>
+                            <td>{{model.recipeExpireDate}}</td>
+                            <td>
+                                <a class="icon-action p-2" [routerLink]="['/recipe/edit/', model.recipeId]"
+                                    ngbTooltip="Edit">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                <a class="icon-action p-2" (click)="DeleteRecipe(model.recipeId)" ngbTooltip="Delete">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
