@@ -1,7 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
+import { CreateRecipeComponent } from './create-recipe/create-recipe.component';
 
-const routes: Routes = [];
+const routes: Routes = [{
+  path: '',
+  component: RecipeDetailsComponent
+},
+{
+  path: 'create-recipe',
+  component: CreateRecipeComponent
+}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
