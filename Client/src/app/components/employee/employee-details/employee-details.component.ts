@@ -16,7 +16,7 @@ export class EmployeeDetailsComponent implements OnInit {
   }
 
   load() {
-    this._employeeService.getAllEmployee().pipe(first()).subscribe({
+    this._employeeService.GetAllEmployee().pipe(first()).subscribe({
       next: (x: any) => {
         this.models = x;
         debugger;
@@ -34,7 +34,7 @@ export class EmployeeDetailsComponent implements OnInit {
     debugger;
     if (window.confirm("Do you want to delete this activity?") === true) {
       this._employeeService
-        .deleteEmployee(id)
+        .DeleteEmployee(id)
         .subscribe({
           next: (x: any) => {
             this.load();

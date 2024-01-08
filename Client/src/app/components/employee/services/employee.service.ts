@@ -10,24 +10,21 @@ export class EmployeeService {
   constructor(private httpClient: HttpService) { }
 
   CreateEmployee(model: Employee) {
-    debugger;
     return this.httpClient.post<Employee>(model, 'api/employee/addemployee');
   }
 
-  getAllEmployee() {
-    debugger;
+  GetAllEmployee() {
     return this.httpClient.get<Employee>('api/employee/getemployee');
   }
 
-  deleteEmployee(id: any) { return this.httpClient.delete(id, 'api/employee'); }
+  DeleteEmployee(id: any) { return this.httpClient.delete(id, 'api/employee'); }
 
-  getAllEmployeeId(id: any) {
-    const url = id ? `api/employee/getemployeebyid/${id}` : `api/employee`;
-    debugger;
+  GetAllEmployeeId(id: any) {
+    const url = id ? `api/employee/${id}` : `api/employee`;
     return this.httpClient.get<Employee>(url);
   }
 
-  updateEmployee(id: any, employee: Employee) {
+  UpdateEmployee(id: any, employee: Employee) {
     debugger;
     return this.httpClient.put<Employee>(id, employee, 'api/employee');
   }

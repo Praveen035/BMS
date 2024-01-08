@@ -22,7 +22,6 @@
                     <caption>List of employees</caption>
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
                             <th scope="col">First</th>
                             <th scope="col">Department</th>
                             <th scope="col">Email</th>
@@ -32,7 +31,6 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let model of models; let rowIndex=index ">
-                            <td>{{model.employeeID}}</td>
                             <td>{{model.employeeName}}</td>
                             <td>{{model.department}}</td>
                             <td>{{model.emailId}}</td>

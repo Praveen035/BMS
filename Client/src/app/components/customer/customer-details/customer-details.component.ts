@@ -8,21 +8,21 @@ import { CustomerService } from '../services/customer.service';
   styleUrls: ['./customer-details.component.scss']
 })
 export class CustomerDetailsComponent implements OnInit {
-
+  models: Customer[] = [];
   constructor(private _customerService: CustomerService) { }
   ngOnInit(): void {
     this.getCustomerDetails();
   }
 
-  models: Customer[] = [];
-
   deleteCustomer(id: any) {
-    this._customerService.deleteCustomer(id).subscribe({
-      next: (x: any) => {
-
-      },
-      error: (err: Error) => { }
-    })
+    if (window.confirm("Do you want to delete this activity?") === true) {
+      this._customerService.deleteCustomer(id).subscribe({
+        next: (x: any) => {
+          this.getCustomerDetails();
+        },
+        error: (err: Error) => { }
+      })
+    }
   }
 
   getCustomerDetails() {

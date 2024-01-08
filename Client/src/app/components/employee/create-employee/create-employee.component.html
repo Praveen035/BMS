@@ -8,20 +8,19 @@
                 <div class="col-sm-12">
                     <div class="row mb-2">
                         <div class="col-sm-3">
-                            <label>Employee Name</label>
-                            <input type="text" [(ngModel)]="model.employeeName" class="form-control">
+                            <input type="text" [(ngModel)]="model.employeeName" placeholder="Employee Name"
+                                class="form-control">
                         </div>
                         <div class="col-sm-3">
-                            <label>Department</label>
-                            <input type="text" [(ngModel)]="model.department" class="form-control">
+                            <ng-select [items]="deps" bindLabel="departmentName" bindValue="departmentId"
+                                [multiple]="true" placeholder="Select department" [(ngModel)]="selectedDep">
+                            </ng-select>
                         </div>
                         <div class="col-sm-3">
-                            <label>Email Id</label>
-                            <input type="text" [(ngModel)]="model.emailId" class="form-control">
+                            <input type="text" [(ngModel)]="model.emailId" placeholder="Email Id" class="form-control">
                         </div>
                         <div class="col-sm-3">
-                            <label>Doj</label>
-                            <input type="date" [(ngModel)]="model.doj" class="form-control">
+                            <input type="date" [(ngModel)]="model.doj" placeholder="Doj" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -29,10 +28,10 @@
         </div>
         <div class="card-footer text-muted">
             <div class="text-end">
-                <button type="button" [routerLink]="['/employee-details']"
+                <button type="button" [routerLink]="['/employee']"
                     class="btn btn-sm btn-outline-dark me-2">Cancel</button>
                 <button type="button" (click)="SaveEmployeeDetails()"
-                    class="btn btn-sm btn-outline-success">Create</button>
+                    class="btn btn-sm btn-outline-success">Submit</button>
             </div>
         </div>
     </div>

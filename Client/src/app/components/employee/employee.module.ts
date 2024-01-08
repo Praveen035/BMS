@@ -6,6 +6,7 @@ import { CreateEmployeeComponent } from './create-employee/create-employee.compo
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     EmployeeRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgSelectModule
   ], providers: [
     DatePipe
   ]

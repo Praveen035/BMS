@@ -21,7 +21,7 @@ export class CustomerService {
   deleteCustomer(id: any) { return this.httpClient.delete(id, 'api/customer'); }
 
   getAllCustomerId(id: any) {
-    const url = id ? `api/customer/getcustomerbyid/${id}` : `api/customer`;
+    const url = id ? `api/customer/${id}` : `api/customer`;
     return this.httpClient.get<Customer>(url);
   }
 

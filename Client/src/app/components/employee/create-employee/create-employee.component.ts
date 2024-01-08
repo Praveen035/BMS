@@ -4,6 +4,8 @@ import { EmployeeService } from '../services/employee.service';
 import { NotificationService } from 'src/app/common/services/notification.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { DepartmentService } from '../../department/services/department.service';
+import { Department } from '../../department/models/department';
 
 @Component({
   selector: 'app-create-employee',
@@ -13,11 +15,13 @@ import { DatePipe } from '@angular/common';
 export class CreateEmployeeComponent implements OnInit {
 
   model: Employee = new Employee();
+  deps: Department[] = [];
   employeeId: any;
   employeeDtOfJoining: any;
-  constructor(private empService: EmployeeService, private _router: Router,
-    private _avRoute: ActivatedRoute, private datePipe: DatePipe
-  ) { }
+  selectedDep: any;
+  constructor(private _empService: EmployeeService, private _router: Router,
+    private _avRoute: ActivatedRoute, private datePipe: DatePipe,
+    private _depService: DepartmentService) { }
   ngOnInit(): void {
 
     if (this._avRoute.snapshot.params['id']) {
@@ -25,7 +29,7 @@ export class CreateEmployeeComponent implements OnInit {
       this.employeeId = this._avRoute.snapshot.params['id'];
       if (this.employeeId != null && this.employeeId != undefined) {
         debugger;
-        this.empService.getAllEmployeeId(this.employeeId).subscribe((model: any) => {
+        this._empService.GetAllEmployeeId(this.employeeId).subscribe((model: any) => {
           this.model = model;
           this.employeeDtOfJoining = this.datePipe.transform(this.model.doj, 'yyyy-MM-dd')!;
           this.model.doj = this.employeeDtOfJoining;
@@ -33,19 +37,33 @@ export class CreateEmployeeComponent implements OnInit {
         });
       }
     }
+    this.GetAllDepartment();
   }
 
   SaveEmployeeDetails() {
     debugger;
     if (this.employeeId !== null && this.employeeId !== undefined) {
-      this.empService.updateEmployee(this.employeeId, this.model).subscribe((x) => {
+      this._empService.UpdateEmployee(this.employeeId, this.model).subscribe((x) => {
         this._router.navigate(['employee']);
       });
     } else {
-      this.empService.CreateEmployee(this.model).subscribe((x) => {
+      this._empService.CreateEmployee(this.model).subscribe((x) => {
         // this._notificationsService.Success('Created employee successfully!');
         this._router.navigate(['employee']);
       });
     }
+  }
+
+  GetAllDepartment() {
+    debugger;
+    this._depService.GetAllDepartment().subscribe({
+      next: (x: any) => {
+        this.deps = x;
+        debugger;
+      },
+      error: (err: Error) => {
+
+      }
+    })
   }
 }
