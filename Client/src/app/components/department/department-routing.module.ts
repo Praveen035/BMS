@@ -7,7 +7,11 @@ const routes: Routes = [{
   path: '',
   component: DepartmentDetailsComponent
 }, {
-  path: 'create',
+  path: 'createdepartment',
+  component: CreateDepartmentComponent
+},
+{
+  path: 'edit/:id',
   component: CreateDepartmentComponent
 }
 ];

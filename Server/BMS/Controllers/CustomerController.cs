@@ -12,27 +12,29 @@ namespace Api.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-		private readonly ICustomerService _customer;
-		private readonly IDepartmentService _department;
-		public CustomerController(ICustomerService customer, IDepartmentService department)
+
+		private readonly ICustomerService _customerService;
+		private readonly IDepartmentService _departmentService;
+
+		public CustomerController(ICustomerService customerService, IDepartmentService departmentService)
 		{
-			_customer = customer ??
-				throw new ArgumentNullException(nameof(customer));
-			_department = department ??
-				throw new ArgumentNullException(nameof(department));
+			_customerService = customerService ?? 
+				throw new ArgumentNullException(nameof(customerService));
+			_departmentService = departmentService ?? 
+				throw new ArgumentNullException(nameof(departmentService));
 		}
 
 		[HttpGet]
 		[Route("getcustomer")]
 		public async Task<IActionResult> Get()
 		{
-			return Ok(await _customer.GetCustomers());
+			return Ok(await _customerService.GetCustomers());
 		}
 
 		[HttpGet("{id}")]
-		public async Task<IActionResult> GetEmpByID(int Id)
+		public async Task<IActionResult> GetEmpByID(Guid Id)
 		{
-			return Ok(await _customer.GetCustomerByID(Id));
+			return Ok(await _customerService.GetCustomerByID(Id));
 		}
 
 		[HttpPost]
@@ -40,7 +42,7 @@ namespace Api.Controllers
 		public async Task<IActionResult> Post(CustomerModel emp)
 		{
 			emp.Id = Guid.NewGuid();
-			var result = await _customer.InsertCustomer(emp);
+			var result = await _customerService.InsertCustomer(emp);
 			if (result.Id == null)
 			{
 				return StatusCode(StatusCodes.Status500InternalServerError, "Something Went Wrong");
@@ -49,17 +51,16 @@ namespace Api.Controllers
 		}
 
 		[HttpPut("{id}")]
-		public async Task<IActionResult> Put(int id, [FromBody] CustomerModel cust)
+		public async Task<IActionResult> Put(Guid id, [FromBody] CustomerModel cust)
 		{
-			await _customer.UpdateCustomer(cust);
+			await _customerService.UpdateCustomer(cust);
 			return Ok("Updated Successfully");
 		}
-
 
 		[HttpDelete("{id}")]
 		public JsonResult Delete(Guid id)
 		{
-			var result = _customer.DeleteCustomer(id);
+			var result = _customerService.DeleteCustomer(id);
 			return new JsonResult("Deleted Successfully");
 		}
 
@@ -67,7 +68,7 @@ namespace Api.Controllers
 		[Route("getdepartment")]
 		public async Task<IActionResult> GetAllDepartmentNames()
 		{
-			return Ok(await _department.GetDepartment());
+			return Ok(await _departmentService.GetDepartment());
 		}
 	}
 }

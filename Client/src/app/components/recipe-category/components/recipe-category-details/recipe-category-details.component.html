@@ -1,1 +1,42 @@
-<p>recipe-category-details works!</p>
+<div class="card">
+    <div class="card-header">
+        <h6>Recipe details</h6>
+    </div>
+    <div class="card-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <input type="text" placeholder="Recipe Category Name" class="form-control">
+                </div>
+                <div class="col-sm-4 mt-4">
+                    <button type="button" [routerLink]="['create-recipe']" class="btn btn-secondary">Create</button>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table table-striped mt-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">Recipe Category</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let model of models; let rowIndex=index ">
+                            <td>{{model.recipeCategoryName}}</td>
+                            <td>
+                                <a class="icon-action p-2"
+                                    [routerLink]="['/recipe-category/edit/', model.recipeCategoryId]" ngbTooltip="Edit">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                <a class="icon-action p-2" (click)="DeleteRecipeCategory(model.recipeCategoryId)"
+                                    ngbTooltip="Delete">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

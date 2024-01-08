@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DepartmentRoutingModule } from './department-routing.module';
 import { CreateDepartmentComponent } from './create-department/create-department.component';
 import { DepartmentDetailsComponent } from './department-details/department-details.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { DepartmentDetailsComponent } from './department-details/department-deta
   ],
   imports: [
     CommonModule,
-    DepartmentRoutingModule
+    DepartmentRoutingModule,
+    FormsModule
   ]
 })
 export class DepartmentModule { }

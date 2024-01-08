@@ -50,7 +50,7 @@ app.UseAuthorization();
 
 app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
-
+app.UseMiddleware<ExceptionHandlingMiddleware>(); 
 app.MapControllers();
 
 app.Run();
