@@ -14,6 +14,7 @@ namespace Api.Controllers
     public class LoginController : ControllerBase
     {
         private readonly DataContext _authContext;
+
         public LoginController(DataContext context)
         {
             _authContext = context;
