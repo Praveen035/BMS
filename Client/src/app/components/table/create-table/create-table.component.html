@@ -1,1 +1,26 @@
-<p>create-table works!</p>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h6>Table Create</h6>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row mb-2">
+                        <div class="col-sm-3">
+                            <input type="text" [(ngModel)]="model.tableName" placeholder="Table Name"
+                                class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <div class="text-end">
+                <button type="button" [routerLink]="['/table']" class="btn btn-sm btn-outline-dark me-2">Cancel</button>
+                <button type="button" (click)="SaveTableDetails()"
+                    class="btn btn-sm btn-outline-success">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
