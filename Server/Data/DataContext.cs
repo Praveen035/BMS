@@ -20,11 +20,13 @@ namespace Data
             get;
             set;
         }
+
         public DbSet<DepartmentModel> Departments
         {
             get;
             set;
         }
+
         public DbSet<EmployeeModel> Employees
         {
             get;
@@ -36,7 +38,6 @@ namespace Data
             get;
             set;
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserModel>().ToTable("Users");
