@@ -20,11 +20,9 @@ export class RecipeCategoryDetailsComponent implements OnInit {
   }
 
   GetRecipeCategoryDetails() {
-    debugger;
     this._recipeCategoryService.GetAllRecipeCategory().subscribe({
       next: (x: any) => {
         this.models = x;
-        debugger;
       },
       error: () => {
 

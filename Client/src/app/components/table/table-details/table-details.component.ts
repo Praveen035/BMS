@@ -31,7 +31,6 @@ export class TableDetailsComponent implements OnInit {
   }
 
   DeleteTableDetails(tableId: any) {
-    debugger;
     this._tableService.DeleteTable(tableId).subscribe({
       next: () => {
         this.GetTableDetails();
