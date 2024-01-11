@@ -23,6 +23,8 @@ builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IRecipeService, RecipeService>();
 builder.Services.AddScoped<IRecipeCategoryService, RecipeCatgeoryService>();
+builder.Services.AddScoped<ITableService, TableService>();
+
 //Enable CORS 
 builder.Services.AddCors(c =>
 {

@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h6>Add Reservation</h6>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <label>Customer Name</label>
+                            <input type="text" [(ngModel)]="model.customerName" class="form-control">
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Customer Ph Number</label>
+                            <input type="text" [(ngModel)]="model.customerPhNumber" class="form-control">
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Add Guest</label>
+                            <input type="text" [(ngModel)]="model.numberOfGuest" class="form-control">
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Customer Email Id</label>
+                            <input type="text" [(ngModel)]="model.emailId" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label>Table</label>
+                            <ng-select [items]="tables" bindLabel="tableName" bindValue="tableId" [multiple]="true"
+                                placeholder="Select Table" [(ngModel)]="selectedTables">
+                            </ng-select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Recipes</label>
+                            <ng-select [items]="recipes" bindLabel="tableName" bindValue="tableId" [multiple]="true"
+                                placeholder="Select Recipe" [(ngModel)]="selectedRecipes">
+                            </ng-select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Visit Date</label>
+                            <input type="date" [(ngModel)]="model.visitDate" class="form-control">
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Visit Time</label>
+                            <input type="date" [(ngModel)]="model.VisitTime" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <div class="text-end">
+                <button type="button" [routerLink]="['/reservation']"
+                    class="btn btn-sm btn-outline-dark me-2">Cancel</button>
+                <button type="button" (click)="SaveResTableDetails()"
+                    class="btn btn-sm btn-outline-success">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

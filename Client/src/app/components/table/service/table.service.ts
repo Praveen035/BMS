@@ -9,22 +9,22 @@ export class TableService {
 
   constructor(private httpClient: HttpService) { }
 
-  CreateRecipe(recipe: Table) {
+  CreateTable(recipe: Table) {
     return this.httpClient.post<Table>(recipe, 'api/table/addtable');
   }
 
-  GetAllRecipe() {
-    return this.httpClient.get<Table>('api/table/getrecipe');
+  GetAllTable() {
+    return this.httpClient.get<Table>('api/table/gettable');
   }
 
-  DeleteRecipe(id: any) { return this.httpClient.delete(id, 'api/recipe'); }
+  DeleteTable(id: any) { return this.httpClient.delete(id, 'api/table'); }
 
-  GetAllRecipeId(id: any) {
-    const url = id ? `api/recipe/${id}` : `api/recipe`;
+  GetAllTableId(id: any) {
+    const url = id ? `api/table/${id}` : `api/table`;
     return this.httpClient.get<Table>(url);
   }
 
-  UpdateRecipe(id: any, recipe: Table) {
-    return this.httpClient.put<Table>(id, recipe, 'api/recipe');
+  UpdateTable(id: any, recipe: Table) {
+    return this.httpClient.put<Table>(id, recipe, 'api/table');
   }
 }

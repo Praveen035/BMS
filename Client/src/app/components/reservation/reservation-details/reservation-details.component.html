@@ -1,0 +1,62 @@
+<div class="card">
+    <div class="card-header">
+        <h6>Reservation Details</h6>
+    </div>
+    <div class="card-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Customer Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-sm-4">
+                    <label>Customer Ph Number</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-sm-4 mt-4">
+                    <button type="button" [routerLink]="['create-reservation']"
+                        class="btn btn-secondary">Create</button>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table table-striped mt-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Customer Ph Number</th>
+                            <th scope="col">Email Id</th>
+                            <th scope="col">Number Of Guest</th>
+                            <th scope="col">Table</th>
+                            <th scope="col">Recipes</th>
+                            <th scope="col">Visit Date</th>
+                            <th scope="col">Visit Time</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let model of models; let rowIndex=index ">
+                            <td>{{model.customerName}}</td>
+                            <td>{{model.customerPhNumber}}</td>
+                            <td>{{model.emailId}}</td>
+                            <td>{{model.numberOfGuest}}</td>
+                            <td>{{model.table}}</td>
+                            <td>{{model.recipes}}</td>
+                            <td>{{model.visitDate}}</td>
+                            <td>{{model.VisitTime}}</td>
+                            <td>
+                                <a class="icon-action p-2" [routerLink]="['/reservation/edit/', model.reservationId]"
+                                    ngbTooltip="Edit">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                <a class="icon-action p-2" (click)="DeleteReservationTableDetails(model.reservationId)"
+                                    ngbTooltip="Delete">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
