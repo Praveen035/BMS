@@ -25,15 +25,12 @@ export class CreateEmployeeComponent implements OnInit {
   ngOnInit(): void {
 
     if (this._avRoute.snapshot.params['id']) {
-      debugger;
       this.employeeId = this._avRoute.snapshot.params['id'];
       if (this.employeeId != null && this.employeeId != undefined) {
-        debugger;
         this._empService.GetAllEmployeeId(this.employeeId).subscribe((model: any) => {
           this.model = model;
           this.employeeDtOfJoining = this.datePipe.transform(this.model.doj, 'yyyy-MM-dd')!;
           this.model.doj = this.employeeDtOfJoining;
-          debugger;
         });
       }
     }
@@ -41,12 +38,12 @@ export class CreateEmployeeComponent implements OnInit {
   }
 
   SaveEmployeeDetails() {
-    debugger;
     if (this.employeeId !== null && this.employeeId !== undefined) {
       this._empService.UpdateEmployee(this.employeeId, this.model).subscribe((x) => {
         this._router.navigate(['employee']);
       });
     } else {
+      debugger;
       this._empService.CreateEmployee(this.model).subscribe((x) => {
         // this._notificationsService.Success('Created employee successfully!');
         this._router.navigate(['employee']);
@@ -55,11 +52,9 @@ export class CreateEmployeeComponent implements OnInit {
   }
 
   GetAllDepartment() {
-    debugger;
     this._depService.GetAllDepartment().subscribe({
       next: (x: any) => {
         this.deps = x;
-        debugger;
       },
       error: (err: Error) => {
 

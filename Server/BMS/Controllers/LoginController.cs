@@ -14,13 +14,14 @@ namespace Api.Controllers
     public class LoginController : ControllerBase
     {
         private readonly DataContext _authContext;
+
         public LoginController(DataContext context)
         {
             _authContext = context;
         }
 
-        [HttpPost("authenticate")]
-        public async Task<IActionResult> Authenticate([FromBody] UserModel userObj)
+        [HttpPost("authenticated")]
+        public async Task<IActionResult> Authenticated([FromBody] UserModel userObj)
         {
             if (userObj == null)
                 return BadRequest();

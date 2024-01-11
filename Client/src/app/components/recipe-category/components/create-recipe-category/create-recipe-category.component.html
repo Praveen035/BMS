@@ -1,1 +1,27 @@
-<p>create-recipe-category works!</p>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h6>Recipe Category Create</h6>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row mb-2">
+                        <div class="col-sm-3">
+                            <input type="text" [(ngModel)]="model.recipeCategoryName" placeholder="Category Name"
+                                class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <div class="text-end">
+                <button type="button" [routerLink]="['/recipe-category']"
+                    class="btn btn-sm btn-outline-dark me-2">Cancel</button>
+                <button type="button" (click)="SaveRecipeCatDetails()"
+                    class="btn btn-sm btn-outline-success">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h6>Customer create</h6>
+            <h6>Customer Create</h6>
         </div>
         <div class="card-body">
             <div class="row">
@@ -9,23 +9,28 @@
                     <div class="row mb-2">
                         <div class="col-sm-3">
                             <label>Customer Name</label>
-                            <input type="text" [(ngModel)]="model.name" class="form-control">
+                            <input type="text" [(ngModel)]="model.name" placeholder="Customer Name"
+                                class="form-control">
                         </div>
                         <div class="col-sm-3">
                             <label>City</label>
-                            <input type="text" [(ngModel)]="model.city" class="form-control">
+                            <input type="text" [(ngModel)]="model.city" placeholder="City" class="form-control">
                         </div>
                         <div class="col-sm-3">
                             <label>Country</label>
-                            <input type="text" [(ngModel)]="model.country" class="form-control">
+                            <input type="text" [(ngModel)]="model.country" placeholder="Country" class="form-control">
                         </div>
                         <div class="col-sm-3">
                             <label>Phone Number</label>
-                            <input type="number" [(ngModel)]="model.phoneNumber" class="form-control">
+                            <input type="number" [(ngModel)]="model.phoneNumber" placeholder="Phone Number"
+                                class="form-control">
                         </div>
+                    </div>
+                    <div class="row mt-2">
                         <div class="col-sm-3">
                             <label>Postal Code</label>
-                            <input type="text" [(ngModel)]="model.postalCode" class="form-control">
+                            <input type="text" [(ngModel)]="model.postalCode" placeholder="Postal Code"
+                                class="form-control">
                         </div>
                     </div>
                 </div>

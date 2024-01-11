@@ -1,1 +1,42 @@
-<p>table-details works!</p>
+<div class="card">
+    <div class="card-header">
+        <h6>Table Details</h6>
+    </div>
+    <div class="card-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <input type="text" placeholder="Table Name" class="form-control">
+                </div>
+                <div class="col-sm-4 mt-1">
+                    <button type="button" [routerLink]="['create-table']" class="btn btn-secondary">Create</button>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table table-striped mt-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">Table</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let model of models; let rowIndex=index ">
+                            <td>{{model.tableName}}</td>
+                            <td>
+                                <a class="icon-action p-2" [routerLink]="['/recipe-category/edit/', model.tableId]"
+                                    ngbTooltip="Edit">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                <a class="icon-action p-2" (click)="DeleteRecipeCategory(model.tableId)"
+                                    ngbTooltip="Delete">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
