@@ -20,7 +20,8 @@ import { NgbDatepicker } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     ReservationRoutingModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+
   ]
 })
 export class ReservationModule { }
