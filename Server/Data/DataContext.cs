@@ -5,6 +5,7 @@ using Models.Employee;
 using Models.Login;
 using Models.Recipe;
 using Models.RecipeCategory;
+using Models.Table;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,6 +53,13 @@ namespace Data
 			set;
 		}
 
+		public DbSet<TableModel> Tables
+		{
+			get;
+			set;
+		}
+
+
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserModel>().ToTable("Users");
@@ -60,6 +68,7 @@ namespace Data
             modelBuilder.Entity<CustomerModel>().ToTable("Customer");
 			modelBuilder.Entity<RecipeCategoryModel>().ToTable("RecipeCategory");
 			modelBuilder.Entity<RecipeModel>().ToTable("Recipe");
+			modelBuilder.Entity<TableModel>().ToTable("Table");
 		}
     }
 }

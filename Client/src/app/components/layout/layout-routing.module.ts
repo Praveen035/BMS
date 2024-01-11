@@ -75,6 +75,13 @@ export const LayoutRoutes: Routes = [
         canActivate: [
           AuthGuard
         ]
+      },
+      {
+        path: 'reservation',
+        loadChildren: () => import('../reservation/reservation.module').then(m => m.ReservationModule),
+        canActivate: [
+          AuthGuard
+        ]
       }
     ]
   }

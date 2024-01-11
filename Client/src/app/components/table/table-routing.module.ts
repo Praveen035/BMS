@@ -10,6 +10,9 @@ const routes: Routes = [{
 {
   path: 'create-table',
   component: CreateTableComponent
+}, {
+  path: 'edit/:id',
+  component: CreateTableComponent
 }];
 
 @NgModule({
