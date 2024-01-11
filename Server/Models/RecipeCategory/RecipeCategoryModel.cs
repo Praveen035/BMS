@@ -10,7 +10,7 @@ namespace Models.RecipeCategory
     public class RecipeCategoryModel
     {
         [Key]
-        public  Guid RecipeCategoryId { get; set; }
+        public  Guid? RecipeCategoryId { get; set; }
 
         public string? RecipeCategoryName { get; set; }
     }

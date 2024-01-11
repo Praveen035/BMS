@@ -25,7 +25,6 @@ export class EmployeeService {
   }
 
   UpdateEmployee(id: any, employee: Employee) {
-    debugger;
     return this.httpClient.put<Employee>(id, employee, 'api/employee');
   }
 }

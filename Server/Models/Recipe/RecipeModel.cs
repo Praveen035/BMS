@@ -10,7 +10,7 @@ namespace Models.Recipe
 	public class RecipeModel
 	{
 		[Key]
-		public Guid RecipeId { get; set; }
+		public Guid? RecipeId { get; set; }
 		public string? RecipeName { get; set; }
 		public DateTime RecipePrepareDate { get; set; }
 		public DateTime RecipeExpireDate { get; set; }

@@ -10,6 +10,7 @@ export class RecipeService {
   constructor(private httpClient: HttpService) { }
 
   CreateRecipe(recipe: Recipe) {
+    debugger;
     return this.httpClient.post<Recipe>(recipe, 'api/recipe/addrecipe');
   }
 

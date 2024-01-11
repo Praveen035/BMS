@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Helper.Filters;
+using IService;
+using Microsoft.AspNetCore.Mvc;
+using Models.Customer;
+using Models.Recipe;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,36 +12,52 @@ namespace Api.Controllers
 	[ApiController]
 	public class RecipeController : ControllerBase
 	{
-		// GET: api/<RecipeController>
+		private readonly IRecipeService _recipeService;
+
+		public RecipeController(IRecipeService recipeService)
+		{
+			_recipeService = recipeService ??
+				throw new ArgumentNullException(nameof(recipeService));
+		}
+
 		[HttpGet]
-		public IEnumerable<string> Get()
+		[Route("getrecipe")]
+		public async Task<IActionResult> Get()
 		{
-			return new string[] { "value1", "value2" };
+			return Ok(await _recipeService.GetRecipes());
 		}
 
-		// GET api/<RecipeController>/5
 		[HttpGet("{id}")]
-		public string Get(int id)
+		public async Task<IActionResult> GetEmpByID(Guid Id)
 		{
-			return "value";
+			return Ok(await _recipeService.GetRecipeByID(Id));
 		}
 
-		// POST api/<RecipeController>
 		[HttpPost]
-		public void Post([FromBody] string value)
+		[Route("addrecipe")]
+		public async Task<IActionResult> Post(RecipeModel recipe)
 		{
+			recipe.RecipeId = Guid.NewGuid();
+			var result = await _recipeService.InsertRecipe(recipe);
+			if (result.RecipeId == null)
+			{
+				return StatusCode(StatusCodes.Status500InternalServerError, "Something Went Wrong");
+			}
+			return Ok(result);
 		}
 
-		// PUT api/<RecipeController>/5
 		[HttpPut("{id}")]
-		public void Put(int id, [FromBody] string value)
+		public async Task<IActionResult> Put(Guid id, [FromBody] RecipeModel recipe)
 		{
+			await _recipeService.UpdateRecipe(recipe);
+			return Ok("Updated Successfully");
 		}
 
-		// DELETE api/<RecipeController>/5
 		[HttpDelete("{id}")]
-		public void Delete(int id)
+		public JsonResult Delete(Guid id)
 		{
+			var result = _recipeService.DeleteRecipe(id);
+			return new JsonResult("Deleted Successfully");
 		}
 	}
 }

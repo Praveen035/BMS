@@ -8,18 +8,22 @@
                 <div class="col-sm-12">
                     <div class="row mb-2">
                         <div class="col-sm-3">
+                            <label>Employee Name</label>
                             <input type="text" [(ngModel)]="model.employeeName" placeholder="Employee Name"
                                 class="form-control">
                         </div>
                         <div class="col-sm-3">
+                            <label>Department Name</label>
                             <ng-select [items]="deps" bindLabel="departmentName" bindValue="departmentId"
                                 [multiple]="true" placeholder="Select department" [(ngModel)]="selectedDep">
                             </ng-select>
                         </div>
                         <div class="col-sm-3">
+                            <label>Email Id</label>
                             <input type="text" [(ngModel)]="model.emailId" placeholder="Email Id" class="form-control">
                         </div>
                         <div class="col-sm-3">
+                            <label>DOJ</label>
                             <input type="date" [(ngModel)]="model.doj" placeholder="Doj" class="form-control">
                         </div>
                     </div>

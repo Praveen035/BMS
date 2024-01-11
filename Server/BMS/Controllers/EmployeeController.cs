@@ -1,4 +1,6 @@
-﻿using IService;
+﻿using Helper.Filters;
+using IService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Models.Employee;
 
@@ -8,6 +10,7 @@ namespace Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [TokenAuthenticationFilter]
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _employee;
@@ -22,6 +25,7 @@ namespace Api.Controllers
 
         [HttpGet]
         [Route("getemployee")]
+        [Authorize("")]
         public async Task<IActionResult> Get()
         {
             return Ok(await _employee.GetEmployees());

@@ -13,7 +13,10 @@
                         </div>
                         <div class="col-sm-3">
                             <label>Recipe Category</label>
-                            <input type="text" [(ngModel)]="model.recipeCategory" class="form-control">
+                            <select class="form-control">
+                                <option *ngFor="let c of recipeCategories" [ngValue]="c">{{c.recipeCategoryName}}
+                                </option>
+                            </select>
                         </div>
                         <div class="col-sm-3">
                             <label>Recipe Prepare Date</label>

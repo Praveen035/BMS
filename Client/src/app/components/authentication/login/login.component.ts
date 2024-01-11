@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
     if (this.model) {
       this.auth.login(this.model).subscribe(
         (result) => {
-          debugger;
           this.router.navigate(['layout']);
         },
         (err: Error) => {

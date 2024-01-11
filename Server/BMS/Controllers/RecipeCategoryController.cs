@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Helper.Filters;
+using IService;
+using Microsoft.AspNetCore.Mvc;
+using Models.Employee;
+using Models.RecipeCategory;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,36 +12,50 @@ namespace Api.Controllers
 	[ApiController]
 	public class RecipeCategoryController : ControllerBase
 	{
-		// GET: api/<RecipeCategoryController>
+		private readonly IRecipeCategoryService _recipeCatgeoryService;
+		public RecipeCategoryController(IRecipeCategoryService recipeCategoryService)
+		{
+			_recipeCatgeoryService = recipeCategoryService ??
+				throw new ArgumentNullException(nameof(recipeCategoryService));
+		}
+
 		[HttpGet]
-		public IEnumerable<string> Get()
+		[Route("getrecipecategory")]
+		public async Task<IActionResult> Get()
 		{
-			return new string[] { "value1", "value2" };
+			return Ok(await _recipeCatgeoryService.GetRecipeCategories());
 		}
 
-		// GET api/<RecipeCategoryController>/5
 		[HttpGet("{id}")]
-		public string Get(int id)
+		public async Task<IActionResult> GetRecipeCategoryByID(Guid Id)
 		{
-			return "value";
+			return Ok(await _recipeCatgeoryService.GetRecipeCategoriesByID(Id));
 		}
 
-		// POST api/<RecipeCategoryController>
 		[HttpPost]
-		public void Post([FromBody] string value)
+		[Route("addrecipecategory")]
+		public async Task<IActionResult> Post(RecipeCategoryModel recipeCategory)
 		{
+			var result = await _recipeCatgeoryService.InsertRecipeCategory(recipeCategory);
+			if (result.RecipeCategoryId == null)
+			{
+				return StatusCode(StatusCodes.Status500InternalServerError, "Something Went Wrong");
+			}
+			return Ok(result);
 		}
 
-		// PUT api/<RecipeCategoryController>/5
 		[HttpPut("{id}")]
-		public void Put(int id, [FromBody] string value)
+		public async Task<IActionResult> Put(Guid id, [FromBody] RecipeCategoryModel recipeCategory)
 		{
+			await _recipeCatgeoryService.UpdateRecipeCategory(recipeCategory);
+			return Ok();
 		}
 
-		// DELETE api/<RecipeCategoryController>/5
 		[HttpDelete("{id}")]
-		public void Delete(int id)
+		public JsonResult Delete(Guid id)
 		{
+			var result = _recipeCatgeoryService.DeleteRecipeCategory(id);
+			return new JsonResult("Deleted Successfully");
 		}
 	}
 }

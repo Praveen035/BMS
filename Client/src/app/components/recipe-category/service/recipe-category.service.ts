@@ -10,11 +10,12 @@ export class RecipeCategoryService {
   constructor(private httpClient: HttpService) { }
 
   CreateRecipeCategory(recipeCategory: RecipeCategory) {
+    debugger;
     return this.httpClient.post<RecipeCategory>(recipeCategory, 'api/recipecategory/addrecipecategory');
   }
 
   GetAllRecipeCategory() {
-    return this.httpClient.get<RecipeCategory>('api/category/getrecipecategory');
+    return this.httpClient.get<RecipeCategory>('api/recipecategory/getrecipecategory');
   }
 
   DeleteRecipeCategory(id: any) { return this.httpClient.delete(id, 'api/recipecategory'); }

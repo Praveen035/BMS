@@ -1,4 +1,5 @@
-﻿using IService;
+﻿using Helper.Filters;
+using IService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Models.Customer;
@@ -10,18 +11,16 @@ namespace Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomerController : ControllerBase
+	[TokenAuthenticationFilter]
+	public class CustomerController : ControllerBase
     {
 
 		private readonly ICustomerService _customerService;
-		private readonly IDepartmentService _departmentService;
 
-		public CustomerController(ICustomerService customerService, IDepartmentService departmentService)
+		public CustomerController(ICustomerService customerService)
 		{
 			_customerService = customerService ?? 
 				throw new ArgumentNullException(nameof(customerService));
-			_departmentService = departmentService ?? 
-				throw new ArgumentNullException(nameof(departmentService));
 		}
 
 		[HttpGet]
@@ -62,13 +61,6 @@ namespace Api.Controllers
 		{
 			var result = _customerService.DeleteCustomer(id);
 			return new JsonResult("Deleted Successfully");
-		}
-
-		[HttpGet]
-		[Route("getdepartment")]
-		public async Task<IActionResult> GetAllDepartmentNames()
-		{
-			return Ok(await _departmentService.GetDepartment());
 		}
 	}
 }
