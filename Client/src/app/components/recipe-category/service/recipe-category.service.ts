@@ -10,7 +10,6 @@ export class RecipeCategoryService {
   constructor(private httpClient: HttpService) { }
 
   CreateRecipeCategory(recipeCategory: RecipeCategory) {
-    debugger;
     return this.httpClient.post<RecipeCategory>(recipeCategory, 'api/recipecategory/addrecipecategory');
   }
 

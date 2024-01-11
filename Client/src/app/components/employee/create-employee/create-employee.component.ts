@@ -43,7 +43,6 @@ export class CreateEmployeeComponent implements OnInit {
         this._router.navigate(['employee']);
       });
     } else {
-      debugger;
       this._empService.CreateEmployee(this.model).subscribe((x) => {
         // this._notificationsService.Success('Created employee successfully!');
         this._router.navigate(['employee']);

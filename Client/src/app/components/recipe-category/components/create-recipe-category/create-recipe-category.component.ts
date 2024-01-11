@@ -28,7 +28,6 @@ export class CreateRecipeCategoryComponent implements OnInit {
   }
 
   SaveRecipeCatDetails() {
-    debugger;
     if (this.recipeCategoryId !== null && this.recipeCategoryId !== undefined) {
       this._recipeCategoryService.UpdateRecipeCategory(this.recipeCategoryId, this.model).subscribe({
         next: (x: any) => {

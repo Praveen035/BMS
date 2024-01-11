@@ -81,7 +81,6 @@ export class CreateReservationComponent implements OnInit {
     this._tableService.GetAllTable().subscribe({
       next: (x: any) => {
         this.tables = x;
-        debugger;
       },
       error: () => {
 
@@ -93,7 +92,6 @@ export class CreateReservationComponent implements OnInit {
     this._recipeService.GetAllRecipe().subscribe({
       next: (x: any) => {
         this.recipes = x;
-        debugger;
       },
       error: () => {
 
