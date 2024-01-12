@@ -56,6 +56,7 @@ export class CreateReservationComponent implements OnInit {
     }
     this.GetAllTableDetails();
     this.GetAllRecipeDetails();
+    this.model.numberOfGuest = 0;
   }
 
   SaveResTableDetails() {
@@ -97,5 +98,12 @@ export class CreateReservationComponent implements OnInit {
 
       }
     })
+  }
+
+  handleMinus() {
+    this.model.numberOfGuest--;
+  }
+  handlePlus() {
+    this.model.numberOfGuest++;
   }
 }

@@ -1,5 +1,4 @@
-﻿using Models.Employee;
-using Models.Table;
+﻿using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IService
 {
-	public interface ITableService
+    public interface ITableService
 	{
 		Task<IEnumerable<TableModel>> GetTables();
 		Task<TableModel> GetTableByID(Guid ID);

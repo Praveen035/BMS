@@ -82,6 +82,12 @@ export const LayoutRoutes: Routes = [
         canActivate: [
           AuthGuard
         ]
+      }, {
+        path: 'order',
+        loadChildren: () => import('../order/order.module').then(m => m.OrderModule)
+      }, {
+        path: 'menu',
+        loadChildren: () => import('../menu/menu.module').then(m => m.MenuModule)
       }
     ]
   }

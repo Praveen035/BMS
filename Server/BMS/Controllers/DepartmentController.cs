@@ -2,7 +2,7 @@
 using IService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Models.Department;
+using Models;
 
 namespace Api.Controllers
 {
