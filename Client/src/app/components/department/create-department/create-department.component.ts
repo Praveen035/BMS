@@ -23,7 +23,6 @@ export class CreateDepartmentComponent implements OnInit {
           this.model = x;
         },
         error: (error: Error) => {
-
         }
       });
     }
@@ -36,19 +35,17 @@ export class CreateDepartmentComponent implements OnInit {
           this._router.navigate(['department']);
         },
         error: (err: Error) => {
-
         }
       })
     } else {
       this._departmentService.CreateDepartment(this.model).subscribe({
-        next: (x: any) => {
+        next: () => {
+          debugger;
           this._router.navigate(['department']);
         },
         error: (err: Error) => {
-
         }
       })
     }
   }
-
 }

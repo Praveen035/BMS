@@ -8,9 +8,10 @@ namespace Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-	[TokenAuthenticationFilter]
+	//[TokenAuthenticationFilter]
 	public class DepartmentController : ControllerBase
     {
+
             private readonly IDepartmentService _department;
             public DepartmentController(IDepartmentService department)
             {

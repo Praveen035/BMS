@@ -9,7 +9,7 @@ namespace Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-	[TokenAuthenticationFilter]
+	//[TokenAuthenticationFilter]
 	public class CustomerController : ControllerBase
     {
 

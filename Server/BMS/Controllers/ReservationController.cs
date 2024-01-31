@@ -19,7 +19,7 @@ namespace Api.Controllers
 		}
 
 		[HttpGet]
-		[Route("getreservation")]
+		[Route("getReservation")]
 		public async Task<IActionResult> Get()
 		{
 			return Ok(await _reservationService.GetReservations());
@@ -46,7 +46,7 @@ namespace Api.Controllers
 		[HttpPut("{id}")]
 		public async Task<IActionResult> Put(Guid id, [FromBody] ReservationModel res)
 		{
-			await _reservationService.UpdateReservation(res));
+			await _reservationService.UpdateReservation(res);
 			return Ok();
 		}
 

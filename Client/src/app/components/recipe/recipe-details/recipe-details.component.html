@@ -32,8 +32,8 @@
                         <tr *ngFor="let model of models; let rowIndex=index ">
                             <td>{{model.recipeName}}</td>
                             <td>{{model.recipeCategoryName}}</td>
-                            <td>{{model.recipePrepareDate}}</td>
-                            <td>{{model.recipeExpireDate}}</td>
+                            <td>{{model.recipePrepareDate | date:"dd-MM-yyyy"}}</td>
+                            <td>{{model.recipeExpireDate | date:"dd-MM-yyyy"}}</td>
                             <td>
                                 <a class="icon-action p-2" [routerLink]="['/recipe/edit/', model.recipeId]"
                                     ngbTooltip="Edit">

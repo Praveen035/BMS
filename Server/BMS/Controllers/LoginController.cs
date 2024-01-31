@@ -31,24 +31,7 @@ namespace Api.Controllers
 
             if (user == null)
                 return NotFound(new { Message = "User not found!" });
-
-            //if (!PasswordHasher.VerifyPassword(userObj.Password, user.Password))
-            //{
-            //    return BadRequest(new { Message = "Password is Incorrect" });
-            //}
-
-            //user.Token = CreateJwt(user);
-            //var newAccessToken = user.Token;
-            //var newRefreshToken = CreateRefreshToken();
-            //user.RefreshToken = newRefreshToken;
-            //user.RefreshTokenExpiryTime = DateTime.Now.AddDays(5);
-            //await _authContext.SaveChangesAsync();
-
-            //return Ok(new TokenApiDto()
-            //{
-            //    AccessToken = newAccessToken,
-            //    RefreshToken = newRefreshToken
-            //});
+           
             return Ok(userObj);
         }
 
@@ -58,22 +41,7 @@ namespace Api.Controllers
         {
             if (userObj == null)
                 return BadRequest();
-
-            // check email
-            //if (await CheckEmailExistAsync(userObj.Email))
-            //    return BadRequest(new { Message = "Email Already Exist" });
-
-            ////check username
-            //if (await CheckUsernameExistAsync(userObj.Username))
-            //    return BadRequest(new { Message = "Username Already Exist" });
-
-            //var passMessage = CheckPasswordStrength(userObj.Password);
-            //if (!string.IsNullOrEmpty(passMessage))
-            //    return BadRequest(new { Message = passMessage.ToString() });
-
-            //userObj.Password = PasswordHasher.HashPassword(userObj.Password);
-            //userObj.Role = "User";
-            //userObj.Token = "";
+           
             await _authContext.Users.AddAsync(userObj);
             await _authContext.SaveChangesAsync();
             return Ok(new

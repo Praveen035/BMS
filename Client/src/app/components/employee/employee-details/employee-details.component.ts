@@ -19,6 +19,7 @@ export class EmployeeDetailsComponent implements OnInit {
     this._employeeService.GetAllEmployee().pipe(first()).subscribe({
       next: (x: any) => {
         this.models = x;
+        debugger;
         // this.total$ = x.totalCount;
         // this.models.sort = this.sort;
         // this.models.paginator = this.paginator;

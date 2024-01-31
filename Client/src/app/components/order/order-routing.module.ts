@@ -7,7 +7,10 @@ const routes: Routes = [{
   path: '',
   component: OrderDetailsComponent
 }, {
-  path: 'order-create',
+  path: 'createorder',
+  component: CreateOrderComponent
+}, {
+  path: 'edit:/id',
   component: CreateOrderComponent
 }];
 
