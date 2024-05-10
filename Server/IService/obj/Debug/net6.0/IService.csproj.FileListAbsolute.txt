@@ -36,7 +36,7 @@ C:\Praveen\BMS-1812\BMS\Server\IService\obj\Debug\net6.0\IService.AssemblyInfoIn
 C:\Praveen\BMS-1812\BMS\Server\IService\obj\Debug\net6.0\IService.AssemblyInfo.cs
 C:\Praveen\BMS-1812\BMS\Server\IService\obj\Debug\net6.0\IService.csproj.CoreCompileInputs.cache
 C:\Praveen\BMS-1812\BMS\Server\IService\obj\Debug\net6.0\IService.sourcelink.json
-C:\Praveen\BMS-1812\BMS\Server\IService\obj\Debug\net6.0\IService.csproj.CopyComplete
+C:\Praveen\BMS-1812\BMS\Server\IService\obj\Debug\net6.0\IService.csproj.Up2Date
 C:\Praveen\BMS-1812\BMS\Server\IService\obj\Debug\net6.0\IService.dll
 C:\Praveen\BMS-1812\BMS\Server\IService\obj\Debug\net6.0\refint\IService.dll
 C:\Praveen\BMS-1812\BMS\Server\IService\obj\Debug\net6.0\IService.pdb
