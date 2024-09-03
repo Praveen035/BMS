@@ -19,7 +19,6 @@ export class CreateTableComponent implements OnInit {
   ngOnInit(): void {
     if (this._activateRoute.snapshot.params['id'] !== null && this._activateRoute.snapshot.params['id'] !== undefined) {
       this.tableId = this._activateRoute.snapshot.params['id'];
-      debugger;
       this._tableService.GetAllTableId(this.tableId).subscribe({
         next: (x: any) => {
           this.model = x;

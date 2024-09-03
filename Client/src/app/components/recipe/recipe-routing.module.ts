@@ -10,6 +10,9 @@ const routes: Routes = [{
 {
   path: 'create-recipe',
   component: CreateRecipeComponent
+}, {
+  path: 'edit/:id',
+  component: CreateRecipeComponent
 }];
 
 @NgModule({

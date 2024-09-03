@@ -1,8 +1,7 @@
 ﻿using Data;
 using IService;
 using Microsoft.EntityFrameworkCore;
-using Models.Customer;
-using Models.Employee;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

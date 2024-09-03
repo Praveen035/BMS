@@ -1,5 +1,4 @@
-﻿using Models.Customer;
-using Models.Employee;
+﻿using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IService
 {
-	public interface ICustomerService
+    public interface ICustomerService
 	{
 		Task<IEnumerable<CustomerModel>> GetCustomers();
 		Task<CustomerModel> GetCustomerByID(Guid ID);

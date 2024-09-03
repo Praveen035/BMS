@@ -1,5 +1,4 @@
-﻿using Models.Employee;
-using Models.Recipe;
+﻿using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IService
 {
-	public interface IRecipeService
+    public interface IRecipeService
 	{
 		Task<IEnumerable<RecipeModel>> GetRecipes();
 		Task<RecipeModel> GetRecipeByID(Guid ID);

@@ -23,7 +23,6 @@ export class CreateEmployeeComponent implements OnInit {
     private _avRoute: ActivatedRoute, private datePipe: DatePipe,
     private _depService: DepartmentService) { }
   ngOnInit(): void {
-
     if (this._avRoute.snapshot.params['id']) {
       this.employeeId = this._avRoute.snapshot.params['id'];
       if (this.employeeId != null && this.employeeId != undefined) {
@@ -45,6 +44,7 @@ export class CreateEmployeeComponent implements OnInit {
     } else {
       debugger;
       this._empService.CreateEmployee(this.model).subscribe((x) => {
+        debugger;
         // this._notificationsService.Success('Created employee successfully!');
         this._router.navigate(['employee']);
       });

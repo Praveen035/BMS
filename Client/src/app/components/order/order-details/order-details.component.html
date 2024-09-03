@@ -1,1 +1,55 @@
-<p>order-details works!</p>
+<div class="card">
+    <div class="card-header">
+        <h6>Order details</h6>
+    </div>
+    <div class="card-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Customer Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-sm-4">
+                    <label>Order Date</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-sm-4 mt-4">
+                    <button type="button" [routerLink]="['createorder']" class="btn btn-secondary">Create</button>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table table-striped mt-5">
+                    <caption>List of Order</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Customer Ph Number</th>
+                            <th scope="col">Recipes</th>
+                            <th scope="col">Order Date</th>
+                            <th scope="col">Payment Status</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let model of models; let rowIndex=index ">
+                            <td>{{model.customerName}}</td>
+                            <td>{{model.customerPhNumber}}</td>
+                            <td>{{model.recipes}}</td>
+                            <td>{{model.customerOrderDate| date: 'dd/MM/yyyy'}}</td>
+                            <td>{{model.paymentStatus}}</td>
+                            <td>
+                                <a class="icon-action p-2" [routerLink]="['/order/edit/', model.orderId]"
+                                    ngbTooltip="Edit">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                <a class="icon-action p-2" (click)="deleteOrder(model.orderId)" ngbTooltip="Delete">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

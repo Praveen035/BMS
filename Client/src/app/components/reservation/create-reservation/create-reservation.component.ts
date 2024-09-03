@@ -56,6 +56,7 @@ export class CreateReservationComponent implements OnInit {
     }
     this.GetAllTableDetails();
     this.GetAllRecipeDetails();
+    this.model.numberOfGuest = 0;
   }
 
   SaveResTableDetails() {
@@ -81,7 +82,6 @@ export class CreateReservationComponent implements OnInit {
     this._tableService.GetAllTable().subscribe({
       next: (x: any) => {
         this.tables = x;
-        debugger;
       },
       error: () => {
 
@@ -93,11 +93,17 @@ export class CreateReservationComponent implements OnInit {
     this._recipeService.GetAllRecipe().subscribe({
       next: (x: any) => {
         this.recipes = x;
-        debugger;
       },
       error: () => {
 
       }
     })
+  }
+
+  handleMinus() {
+    this.model.numberOfGuest--;
+  }
+  handlePlus() {
+    this.model.numberOfGuest++;
   }
 }

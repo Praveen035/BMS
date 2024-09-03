@@ -3,7 +3,7 @@ import { Recipe } from '../models/recipe';
 import { RecipeService } from '../service/recipe.service';
 import { RecipeCategoryService } from '../../recipe-category/service/recipe-category.service';
 import { RecipeCategory } from '../../recipe-category/models/recipe-category';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-recipe',
@@ -15,10 +15,11 @@ export class CreateRecipeComponent implements OnInit {
   model: Recipe = new Recipe();
   recipeCategories: RecipeCategory[] = [];
   recipeId: any;
+  selectedLevel: any;
 
   constructor(private _recipeService: RecipeService,
     private _recipeCategoryService: RecipeCategoryService,
-    private _activateRoute: ActivatedRoute) { }
+    private _activateRoute: ActivatedRoute, private _router: Router) { }
 
   ngOnInit(): void {
     if (this._activateRoute.snapshot.params['id'] !== null && this._activateRoute.snapshot.params['id'] !== undefined) {
@@ -36,16 +37,19 @@ export class CreateRecipeComponent implements OnInit {
   }
 
   SaveRecipeDetails() {
+    debugger;
     if (this.recipeId !== null && this.recipeId !== undefined) {
       this._recipeService.UpdateRecipe(this.recipeId, this.model).subscribe({
         next: (x: any) => {
           this.model = x;
+          this._router.navigate(['recipe']);
         }
       })
     } else {
+      debugger;
       this._recipeService.CreateRecipe(this.model).subscribe({
         next: () => {
-
+          this._router.navigate(['recipe']);
         },
         error: () => {
 
@@ -64,4 +68,10 @@ export class CreateRecipeComponent implements OnInit {
       }
     })
   }
+
+  selectedRecipe() {
+    this.model.RecipeCategoryId = this.selectedLevel.recipeCategoryId;
+    this.model.recipeCategoryName = this.selectedLevel.recipeCategoryName;
+  }
+
 }

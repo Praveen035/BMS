@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "BMS.Functions": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7183",
+      "launchBrowser": false
+    }
+  }
+}

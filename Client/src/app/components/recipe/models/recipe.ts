@@ -3,5 +3,6 @@ export class Recipe {
     recipeName: string;
     recipePrepareDate: string;
     recipeExpireDate: string;
-    recipeCategory: string;
+    recipeCategoryName: string;
+    RecipeCategoryId: string;
 }

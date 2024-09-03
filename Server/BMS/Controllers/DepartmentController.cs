@@ -2,15 +2,16 @@
 using IService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Models.Department;
+using Models;
 
 namespace Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-	[TokenAuthenticationFilter]
+	//[TokenAuthenticationFilter]
 	public class DepartmentController : ControllerBase
     {
+
             private readonly IDepartmentService _department;
             public DepartmentController(IDepartmentService department)
             {

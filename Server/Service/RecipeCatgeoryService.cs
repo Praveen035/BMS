@@ -1,7 +1,7 @@
 ﻿using Data;
 using IService;
 using Microsoft.EntityFrameworkCore;
-using Models.RecipeCategory;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-	public class RecipeCatgeoryService : IRecipeCategoryService
+    public class RecipeCatgeoryService : IRecipeCategoryService
 	{
 		private readonly DataContext _appDBContext;
 		public RecipeCatgeoryService(DataContext context)

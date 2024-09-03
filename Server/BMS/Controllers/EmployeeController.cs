@@ -2,7 +2,8 @@
 using IService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Models.Employee;
+using Models;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,7 +11,7 @@ namespace Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [TokenAuthenticationFilter]
+    //[TokenAuthenticationFilter]
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _employee;
@@ -25,16 +26,16 @@ namespace Api.Controllers
 
         [HttpGet]
         [Route("getemployee")]
-        [Authorize("")]
         public async Task<IActionResult> Get()
         {
             return Ok(await _employee.GetEmployees());
         }
 
 		[HttpGet("{id}")]
-		public async Task<IActionResult> GetEmpByID(Guid Id)
+		public async Task<EmployeeModel> GetEmpByID(Guid Id)
         {
-            return Ok(await _employee.GetEmployeeByID(Id));
+            var employee = await _employee.GetEmployeeByID(Id);
+            return employee;
         }
 
         [HttpPost]

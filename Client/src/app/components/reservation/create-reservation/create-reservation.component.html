@@ -15,9 +15,16 @@
                             <label>Customer Ph Number</label>
                             <input type="text" [(ngModel)]="model.customerPhNumber" class="form-control">
                         </div>
-                        <div class="col-sm-3">
-                            <label>Add Guest</label>
-                            <input type="text" [(ngModel)]="model.numberOfGuest" class="form-control">
+                        <div class="col-sm-3 wrapper">
+                            <div>
+                                <label>Guests</label>
+                                <!-- <input type="text" [(ngModel)]="model.numberOfGuest" class="form-control"> -->
+                            </div>
+                            <div>
+                                <button class="plusminus" (click)="handleMinus()">-</button>
+                                <input type="number" class="num" value="0" [(ngModel)]="model.numberOfGuest" />
+                                <button class="plusminus" (click)="handlePlus()">+</button>
+                            </div>
                         </div>
                         <div class="col-sm-3">
                             <label>Customer Email Id</label>
@@ -33,7 +40,7 @@
                         </div>
                         <div class="col-sm-3">
                             <label>Recipes</label>
-                            <ng-select [items]="recipes" bindLabel="tableName" bindValue="tableId" [multiple]="true"
+                            <ng-select [items]="recipes" bindLabel="recipeName" bindValue="recipeId" [multiple]="true"
                                 placeholder="Select Recipe" [(ngModel)]="selectedRecipes">
                             </ng-select>
                         </div>

@@ -1,16 +1,24 @@
+using Xunit;
+
 namespace BMS.Test
 {
 	public class Tests
 	{
-		[SetUp]
-		public void Setup()
-		{
-		}
+        [Fact]
+        public void PassingTest()
+        {
+            Assert.Equal(4, Add(2, 2));
+        }
 
-		[Test]
-		public void Test1()
-		{
-			Assert.Pass();
-		}
-	}
+        [Fact]
+        public void FailingTest()
+        {
+            Assert.Equal(4, Add(5, 2));
+        }
+
+        public int Add(int x, int y)
+        {
+            return x + y;
+        }
+    }
 }
