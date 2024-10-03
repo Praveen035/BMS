@@ -18,10 +18,11 @@
                     <caption>List of employees</caption>
                     <thead>
                         <tr>
-                            <th scope="col">First</th>
-                            <th scope="col">Department</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">DOJ</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="employeeName">First</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="department">Department
+                            </th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="emailId">Email</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="doj">DOJ</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>

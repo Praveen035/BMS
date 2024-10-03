@@ -17,11 +17,16 @@
                 <table class="table table-striped mt-5">
                     <thead>
                         <tr>
-                            <th scope="col">Recipe Name</th>
-                            <th scope="col">Recipe Category</th>
-                            <th scope="col">Recipe Prepare Date</th>
-                            <th scope="col">Recipe Expire Date</th>
-                            <th scope="col">Action</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="recipeName">Recipe
+                                Name</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="recipeCategoryName">Recipe
+                                Category</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="recipePrepareDate">Recipe
+                                Prepare Date</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="recipeExpireDate">Recipe
+                                Expire Date</th>
+                            <th scope="col">Action
+                            </th>
                         </tr>
                     </thead>
                     <tbody>

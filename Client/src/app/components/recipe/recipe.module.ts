@@ -5,6 +5,7 @@ import { RecipeRoutingModule } from './recipe-routing.module';
 import { CreateRecipeComponent } from './create-recipe/create-recipe.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { FormsModule } from '@angular/forms';
+import { DirectiveModule } from 'src/app/common/directives/directive/directive.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RecipeRoutingModule,
-    FormsModule
+    FormsModule,
+    DirectiveModule
   ]
 })
 export class RecipeModule { }

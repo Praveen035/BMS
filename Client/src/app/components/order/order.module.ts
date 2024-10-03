@@ -6,6 +6,7 @@ import { CreateOrderComponent } from './create-order/create-order.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { DirectiveModule } from 'src/app/common/directives/directive/directive.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     CommonModule,
     OrderRoutingModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    DirectiveModule
   ]
 })
 export class OrderModule { }

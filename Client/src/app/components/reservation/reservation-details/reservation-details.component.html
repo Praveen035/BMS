@@ -17,14 +17,19 @@
                 <table class="table table-striped mt-5">
                     <thead>
                         <tr>
-                            <th scope="col">Customer Name</th>
-                            <th scope="col">Customer Ph Number</th>
-                            <th scope="col">Email Id</th>
-                            <th scope="col">Number Of Guest</th>
-                            <th scope="col">Table</th>
-                            <th scope="col">Recipes</th>
-                            <th scope="col">Visit Date</th>
-                            <th scope="col">Visit Time</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="customerName">Customer Name
+                            </th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="customerPhNumber">Customer
+                                Ph
+                                Number</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="emailId">Email Id</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="numberOfGuest">Number Of
+                                Guest
+                            </th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="table">Table</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="recipes">Recipes</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="visitDate">Visit Date</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="VisitTime">Visit Time</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>

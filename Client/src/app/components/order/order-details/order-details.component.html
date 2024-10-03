@@ -18,11 +18,17 @@
                     <caption>List of Order</caption>
                     <thead>
                         <tr>
-                            <th scope="col">Customer Name</th>
-                            <th scope="col">Customer Ph Number</th>
-                            <th scope="col">Recipes</th>
-                            <th scope="col">Order Date</th>
-                            <th scope="col">Payment Status</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="customerName">Customer Name
+                            </th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="customerPhNumber">Customer
+                                Ph
+                                Number</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="recipes">Recipes</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="customerOrderDate">Order
+                                Date</th>
+                            <th scope="col" [appSort]="models" data-order="desc" data-name="paymentStatus">Payment
+                                Status
+                            </th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>

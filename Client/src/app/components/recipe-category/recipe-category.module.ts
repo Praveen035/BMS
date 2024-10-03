@@ -5,6 +5,7 @@ import { RecipeCategoryRoutingModule } from './recipe-category-routing.module';
 import { CreateRecipeCategoryComponent } from './components/create-recipe-category/create-recipe-category.component';
 import { RecipeCategoryDetailsComponent } from './components/recipe-category-details/recipe-category-details.component';
 import { FormsModule } from '@angular/forms';
+import { DirectiveModule } from 'src/app/common/directives/directive/directive.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RecipeCategoryRoutingModule,
-    FormsModule
+    FormsModule,
+    DirectiveModule
   ]
 })
 export class RecipeCategoryModule { }

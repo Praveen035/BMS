@@ -17,8 +17,8 @@
                 <table class="table table-striped mt-5">
                     <thead>
                         <tr>
-                            <th scope="col">Table</th>
-                            <th scope="col">Capacity</th>
+                            <th [appSort]="models" data-order="desc" data-name="tableName" scope="col">Table</th>
+                            <th [appSort]="models" data-order="desc" data-name="tableCapacity" scope="col">Capacity</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>

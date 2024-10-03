@@ -7,6 +7,7 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { DirectiveModule } from 'src/app/common/directives/directive/directive.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     EmployeeRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    DirectiveModule
   ], providers: [
     DatePipe
   ]

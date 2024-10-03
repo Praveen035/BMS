@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Table } from '../models/table';
 import { TableService } from '../service/table.service';
 import { Router } from '@angular/router';
+import { SortableHeaderDirective } from 'src/app/common/directives/sortable-header.directive';
 
 @Component({
   selector: 'app-table-details',
@@ -9,6 +10,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./table-details.component.scss']
 })
 export class TableDetailsComponent implements OnInit {
+
+  filter: string;
+  // data: Array<Table> = dataset;
+  // countries: Array<Table> = dataset;
+
+  data: any;
+  countries: any;
+
+  @ViewChildren(SortableHeaderDirective)
+  headers: QueryList<SortableHeaderDirective>;
 
   models: Table[] = [];
   constructor(private _tableService: TableService, private _router: Router) {
@@ -42,4 +53,24 @@ export class TableDetailsComponent implements OnInit {
     })
   }
 
+
+
+  // onSort({ column, direction }: SortEvent) {
+  //   // resetting other headers
+  //   this.headers.forEach((header) => {
+  //     if (header.sortable !== column) {
+  //       header.direction = '';
+  //     }
+  //   });
+
+  //   // sorting countries
+  //   if (direction === '' || column === '') {
+  //     this.countries = this.data;
+  //   } else {
+  //     this.countries = [...this.data].sort((a, b) => {
+  //       const res = compare(a[column], b[column]);
+  //       return direction === 'asc' ? res : -res;
+  //     });
+  //   }
+  // }
 }

@@ -6,10 +6,7 @@ import { CreateReservationComponent } from './create-reservation/create-reservat
 import { ReservationDetailsComponent } from './reservation-details/reservation-details.component';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { timepickerReducer } from 'ngx-bootstrap/timepicker/reducer/timepicker.reducer';
-import { TimepickerModule } from 'ngx-bootstrap/timepicker';
-import { NgbDatepicker } from '@ng-bootstrap/ng-bootstrap';
-
+import { DirectiveModule } from 'src/app/common/directives/directive/directive.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +18,7 @@ import { NgbDatepicker } from '@ng-bootstrap/ng-bootstrap';
     ReservationRoutingModule,
     FormsModule,
     NgSelectModule,
-
+    DirectiveModule
   ]
 })
 export class ReservationModule { }
