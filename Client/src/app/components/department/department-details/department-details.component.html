@@ -24,7 +24,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let model of models; let rowIndex=index ">
+                        <tr *ngFor="let model of models | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
                             <td>{{model.departmentName}}</td>
                             <td>
                                 <a class="icon-action p-2" [routerLink]="['/department/edit/', model.departmentId]"
@@ -39,6 +39,9 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="d-flex justify-content-between p-2 float-end">
+                <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="models.length"></ngb-pagination>
             </div>
         </div>
     </div>

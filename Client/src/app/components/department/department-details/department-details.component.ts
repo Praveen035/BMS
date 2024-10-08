@@ -10,16 +10,31 @@ import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 })
 export class DepartmentDetailsComponent implements OnInit {
   models: Department[] = [];
+  page = 1;
+  pageSize = 5;
+  collectionSize = this.models.length;
+  countries: Department[];
+
   constructor(private _departmentService: DepartmentService) { }
 
   ngOnInit(): void {
     this.GetAllDepartments();
   }
 
+  // refreshCountries() {
+  //   debugger;
+  //   this.countries = this.models
+  //     .map((departmentName, i) => ({ id: i + 1, ...departmentName }))
+  //     .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+  // }
+
   GetAllDepartments() {
+    debugger;
     this._departmentService.GetAllDepartment().subscribe({
       next: (x: any) => {
         this.models = x;
+        debugger
+        // this.refreshCountries();
       }
     })
   }

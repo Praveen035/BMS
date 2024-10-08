@@ -11,6 +11,9 @@ import { Reservation } from '../models/reservation';
 export class ReservationDetailsComponent implements OnInit {
 
   models: Reservation[] = [];
+  page = 1;
+  pageSize = 5;
+  collectionSize = this.models.length;
   constructor(private _resTableServive: ReservationService,
     private _router: Router) { }
 

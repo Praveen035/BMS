@@ -8,6 +8,9 @@ import { Order } from '../models/order';
 })
 export class OrderDetailsComponent implements OnInit {
   models: Order[] = [];
+  page = 1;
+  pageSize = 5;
+  collectionSize = this.models.length;
   ngOnInit(): void {
   }
 

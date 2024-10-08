@@ -11,6 +11,9 @@ import { ActivatedRoute } from '@angular/router';
 export class RecipeCategoryDetailsComponent implements OnInit {
 
   models: RecipeCategory[] = [];
+  page = 1;
+  pageSize = 5;
+  collectionSize = this.models.length;
   recipeCategoryId: any;
   constructor(private _recipeCategoryService: RecipeCategoryService) {
 

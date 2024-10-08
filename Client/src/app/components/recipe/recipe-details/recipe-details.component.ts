@@ -10,6 +10,9 @@ import { RecipeService } from '../service/recipe.service';
 export class RecipeDetailsComponent implements OnInit {
 
   models: Recipe[] = [];
+  page = 1;
+  pageSize = 5;
+  collectionSize = this.models.length;
   constructor(private _recipeService: RecipeService) {
 
   }

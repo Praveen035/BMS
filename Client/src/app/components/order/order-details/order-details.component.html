@@ -33,7 +33,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let model of models; let rowIndex=index ">
+                        <tr *ngFor="let model of models| slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
                             <td>{{model.customerName}}</td>
                             <td>{{model.customerPhNumber}}</td>
                             <td>{{model.recipes}}</td>
@@ -51,6 +51,9 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="d-flex justify-content-between p-2 float-end">
+                <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="models.length"></ngb-pagination>
             </div>
         </div>
     </div>

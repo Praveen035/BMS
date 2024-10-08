@@ -10,20 +10,18 @@ import { SortableHeaderDirective } from 'src/app/common/directives/sortable-head
   styleUrls: ['./table-details.component.scss']
 })
 export class TableDetailsComponent implements OnInit {
-
+  models: Table[] = [];
+  page = 1;
+  pageSize = 5;
+  collectionSize = this.models.length;
   filter: string;
-  // data: Array<Table> = dataset;
-  // countries: Array<Table> = dataset;
-
   data: any;
   countries: any;
 
   @ViewChildren(SortableHeaderDirective)
   headers: QueryList<SortableHeaderDirective>;
 
-  models: Table[] = [];
   constructor(private _tableService: TableService, private _router: Router) {
-
   }
 
   ngOnInit(): void {

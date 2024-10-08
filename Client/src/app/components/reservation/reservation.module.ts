@@ -7,6 +7,7 @@ import { ReservationDetailsComponent } from './reservation-details/reservation-d
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { DirectiveModule } from 'src/app/common/directives/directive/directive.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DirectiveModule } from 'src/app/common/directives/directive/directive.m
     ReservationRoutingModule,
     FormsModule,
     NgSelectModule,
-    DirectiveModule
+    DirectiveModule,
+    NgbModule
   ]
 })
 export class ReservationModule { }
