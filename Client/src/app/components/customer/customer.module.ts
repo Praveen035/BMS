@@ -6,6 +6,8 @@ import { CreateCustomerComponent } from './create-customer/create-customer.compo
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PipesModule } from 'src/app/common/pipes/pipes/pipes.module';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     CustomerRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule,
+    PipesModule
   ]
 })
 export class CustomerModule { }

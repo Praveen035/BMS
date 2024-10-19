@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { DirectiveModule } from 'src/app/common/directives/directive/directive.module';
+import { PipesModule } from 'src/app/common/pipes/pipes/pipes.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { DirectiveModule } from 'src/app/common/directives/directive/directive.m
     HttpClientModule,
     FormsModule,
     NgSelectModule,
-    DirectiveModule
+    DirectiveModule,
+    PipesModule,
+    NgbModule
   ], providers: [
     DatePipe
   ]

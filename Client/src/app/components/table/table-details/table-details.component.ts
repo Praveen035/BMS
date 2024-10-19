@@ -16,10 +16,7 @@ export class TableDetailsComponent implements OnInit {
   collectionSize = this.models.length;
   filter: string;
   data: any;
-  countries: any;
-
-  @ViewChildren(SortableHeaderDirective)
-  headers: QueryList<SortableHeaderDirective>;
+  searchText: any;
 
   constructor(private _tableService: TableService, private _router: Router) {
   }
@@ -51,24 +48,4 @@ export class TableDetailsComponent implements OnInit {
     })
   }
 
-
-
-  // onSort({ column, direction }: SortEvent) {
-  //   // resetting other headers
-  //   this.headers.forEach((header) => {
-  //     if (header.sortable !== column) {
-  //       header.direction = '';
-  //     }
-  //   });
-
-  //   // sorting countries
-  //   if (direction === '' || column === '') {
-  //     this.countries = this.data;
-  //   } else {
-  //     this.countries = [...this.data].sort((a, b) => {
-  //       const res = compare(a[column], b[column]);
-  //       return direction === 'asc' ? res : -res;
-  //     });
-  //   }
-  // }
 }

@@ -15,6 +15,7 @@ export class RecipeCategoryDetailsComponent implements OnInit {
   pageSize = 5;
   collectionSize = this.models.length;
   recipeCategoryId: any;
+  searchText: any;
   constructor(private _recipeCategoryService: RecipeCategoryService) {
 
   }

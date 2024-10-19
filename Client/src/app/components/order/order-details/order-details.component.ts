@@ -11,6 +11,7 @@ export class OrderDetailsComponent implements OnInit {
   page = 1;
   pageSize = 5;
   collectionSize = this.models.length;
+  searchText: any;
   ngOnInit(): void {
   }
 

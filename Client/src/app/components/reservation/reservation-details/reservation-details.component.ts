@@ -14,6 +14,7 @@ export class ReservationDetailsComponent implements OnInit {
   page = 1;
   pageSize = 5;
   collectionSize = this.models.length;
+  searchText: any;
   constructor(private _resTableServive: ReservationService,
     private _router: Router) { }
 

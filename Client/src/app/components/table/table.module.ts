@@ -7,6 +7,7 @@ import { TableDetailsComponent } from './table-details/table-details.component';
 import { FormsModule } from '@angular/forms';
 import { DirectiveModule } from 'src/app/common/directives/directive/directive.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PipesModule } from 'src/app/common/pipes/pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     TableRoutingModule,
     FormsModule,
     DirectiveModule,
-    NgbModule
+    NgbModule,
+    PipesModule
   ]
 })
 export class TableModule { }

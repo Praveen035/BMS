@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { DirectiveModule } from 'src/app/common/directives/directive/directive.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PipesModule } from 'src/app/common/pipes/pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgSelectModule,
     DirectiveModule,
-    NgbModule
+    NgbModule,
+    PipesModule
   ]
 })
 export class ReservationModule { }

@@ -10,6 +10,10 @@ import { Employee } from '../models/employee';
 })
 export class EmployeeDetailsComponent implements OnInit {
   models: Employee[] = [];
+  page = 1;
+  pageSize = 5;
+  collectionSize = this.models.length;
+  searchText: any;
   constructor(private _employeeService: EmployeeService) { }
   ngOnInit(): void {
     this.load();

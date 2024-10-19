@@ -13,6 +13,7 @@ export class RecipeDetailsComponent implements OnInit {
   page = 1;
   pageSize = 5;
   collectionSize = this.models.length;
+  searchText: any;
   constructor(private _recipeService: RecipeService) {
 
   }

@@ -9,6 +9,10 @@ import { CustomerService } from '../services/customer.service';
 })
 export class CustomerDetailsComponent implements OnInit {
   models: Customer[] = [];
+  page = 1;
+  pageSize = 5;
+  collectionSize = this.models.length;
+  searchText: any;
   constructor(private _customerService: CustomerService) { }
   ngOnInit(): void {
     this.getCustomerDetails();

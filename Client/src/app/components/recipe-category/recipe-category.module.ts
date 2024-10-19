@@ -7,6 +7,7 @@ import { RecipeCategoryDetailsComponent } from './components/recipe-category-det
 import { FormsModule } from '@angular/forms';
 import { DirectiveModule } from 'src/app/common/directives/directive/directive.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PipesModule } from 'src/app/common/pipes/pipes/pipes.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RecipeCategoryRoutingModule,
     FormsModule,
     DirectiveModule,
-    NgbModule
+    NgbModule,
+    PipesModule
   ]
 })
 export class RecipeCategoryModule { }

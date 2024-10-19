@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-4">
-                    <input type="text" placeholder="Search" class="form-control">
+                    <input type="text" [(ngModel)]="searchText" placeholder="Search" class="form-control">
                 </div>
                 <div class="col-sm-8">
                     <button type="button" [routerLink]="['create-table']"
@@ -23,7 +23,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let model of models| slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                        <tr
+                            *ngFor="let model of models| slice: (page-1) * pageSize : (page-1) * pageSize + pageSize | searchFilter: searchText">
                             <td>{{model.tableName}}</td>
                             <td>{{model.tableCapacity}}</td>
                             <td>

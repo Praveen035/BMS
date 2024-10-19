@@ -26,7 +26,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let model of models; let rowIndex=index ">
+                        <tr
+                            *ngFor="let model of models| slice: (page-1) * pageSize : (page-1) * pageSize + pageSize | searchFilter: searchText">
                             <td>{{model.name}}</td>
                             <td>{{model.city}}</td>
                             <td>{{model.country}}</td>
@@ -44,6 +45,9 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="d-flex justify-content-between p-2 float-end">
+                <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="models.length"></ngb-pagination>
             </div>
         </div>
     </div>
